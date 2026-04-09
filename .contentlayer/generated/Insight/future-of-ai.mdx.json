@@ -1,0 +1,24 @@
+{
+  "title": "The Future of AI in Indian Financial Services",
+  "date": "2026-04-10T00:00:00.000Z",
+  "author": "Rohan Sharma, Priya Nair",
+  "category": "White Paper",
+  "readTime": "8 min read",
+  "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  "excerpt": "A comprehensive white paper on accelerating AI adoption, compliance, and growth within the Indian banking sector.",
+  "body": {
+    "raw": "\n# Introduction\n\nThe Indian financial sector is on the brink of an AI revolution. Generative AI and advanced machine learning models are no longer just experimental capabilities—they are fundamental drivers of next-generation product strategy.\n\n## Key Challenges\n\n1. **Compliance & Regulation**\n   Navigating the RBI's stringent guidelines on data privacy.\n2. **Legacy Infrastructure**\n   Integration with systems built decades ago.\n3. **Talent Scarcity**\n   Finding engineers capable of maintaining production-grade LLM architectures.\n\n## AdvaitAI's Approach\n\nWe advocate for an incrementally deployed, **aligned AI model** that focuses on human-in-the-loop workflows rather than black-box automation. \n\n> \"Intelligence augmentation, not just artificial intelligence, is the key to enterprise adoption.\"\n\n### Conclusion\n\nOur findings indicate a 35% reduction in operational friction when AI is used to augment rather than replace human agents in banking.\n",
+    "code": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var f=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),I=(t,n)=>{for(var i in n)r(t,i,{get:n[i],enumerable:!0})},c=(t,n,i,o)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let a of u(n))!m.call(t,a)&&a!==i&&r(t,a,{get:()=>n[a],enumerable:!(o=g(n,a))||o.enumerable});return t};var b=(t,n,i)=>(i=t!=null?d(p(t)):{},c(n||!t||!t.__esModule?r(i,\"default\",{value:t,enumerable:!0}):i,t)),x=t=>c(r({},\"__esModule\",{value:!0}),t);var h=f((w,l)=>{l.exports=_jsx_runtime});var j={};I(j,{default:()=>A,frontmatter:()=>y});var e=b(h()),y={title:\"The Future of AI in Indian Financial Services\",date:\"2026-04-10\",author:\"Rohan Sharma, Priya Nair\",category:\"White Paper\",readTime:\"8 min read\",excerpt:\"A comprehensive white paper on accelerating AI adoption, compliance, and growth within the Indian banking sector.\",coverImage:\"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80\"};function s(t){let n=Object.assign({h1:\"h1\",p:\"p\",h2:\"h2\",ol:\"ol\",li:\"li\",strong:\"strong\",blockquote:\"blockquote\",h3:\"h3\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.h1,{children:\"Introduction\"}),`\n`,(0,e.jsx)(n.p,{children:\"The Indian financial sector is on the brink of an AI revolution. Generative AI and advanced machine learning models are no longer just experimental capabilities\\u2014they are fundamental drivers of next-generation product strategy.\"}),`\n`,(0,e.jsx)(n.h2,{children:\"Key Challenges\"}),`\n`,(0,e.jsxs)(n.ol,{children:[`\n`,(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Compliance & Regulation\"}),`\nNavigating the RBI's stringent guidelines on data privacy.`]}),`\n`,(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Legacy Infrastructure\"}),`\nIntegration with systems built decades ago.`]}),`\n`,(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Talent Scarcity\"}),`\nFinding engineers capable of maintaining production-grade LLM architectures.`]}),`\n`]}),`\n`,(0,e.jsx)(n.h2,{children:\"AdvaitAI's Approach\"}),`\n`,(0,e.jsxs)(n.p,{children:[\"We advocate for an incrementally deployed, \",(0,e.jsx)(n.strong,{children:\"aligned AI model\"}),\" that focuses on human-in-the-loop workflows rather than black-box automation.\"]}),`\n`,(0,e.jsxs)(n.blockquote,{children:[`\n`,(0,e.jsx)(n.p,{children:'\"Intelligence augmentation, not just artificial intelligence, is the key to enterprise adoption.\"'}),`\n`]}),`\n`,(0,e.jsx)(n.h3,{children:\"Conclusion\"}),`\n`,(0,e.jsx)(n.p,{children:\"Our findings indicate a 35% reduction in operational friction when AI is used to augment rather than replace human agents in banking.\"})]})}function v(t={}){let{wrapper:n}=t.components||{};return n?(0,e.jsx)(n,Object.assign({},t,{children:(0,e.jsx)(s,t)})):s(t)}var A=v;return x(j);})();\n;return Component;"
+  },
+  "_id": "future-of-ai.mdx",
+  "_raw": {
+    "sourceFilePath": "future-of-ai.mdx",
+    "sourceFileName": "future-of-ai.mdx",
+    "sourceFileDir": ".",
+    "contentType": "mdx",
+    "flattenedPath": "future-of-ai"
+  },
+  "type": "Insight",
+  "url": "/insights/future-of-ai",
+  "slug": "future-of-ai"
+}

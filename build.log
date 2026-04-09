@@ -1,0 +1,79 @@
+
+> my-app@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+Generated 1 documents in .contentlayer
+Failed to compile.
+
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css
+SyntaxError: Unexpected token, expected "," (88:19)
+    at unexpected (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:99:15)
+    at expect (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:86:5)
+    at parseObj (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:759:20)
+    at parseExprAtom (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:553:7)
+    at parseExprSubscripts (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:276:20)
+    at parseMaybeUnary (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:257:20)
+    at parseExprOps (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:185:20)
+    at parseMaybeConditional (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:157:20)
+    at baseParseMaybeAssign (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:142:20)
+    at tsParseMaybeAssignWithoutJSX (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/plugins/typescript.js:1580:45)
+
+Import trace for requested module:
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css
+./src/app/globals.css
+
+./src/app/globals.css
+SyntaxError: Unexpected token, expected "," (88:19)
+    at unexpected (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:99:15)
+    at expect (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:86:5)
+    at parseObj (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:759:20)
+    at parseExprAtom (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:553:7)
+    at parseExprSubscripts (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:276:20)
+    at parseMaybeUnary (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:257:20)
+    at parseExprOps (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:185:20)
+    at parseMaybeConditional (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:157:20)
+    at baseParseMaybeAssign (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:142:20)
+    at tsParseMaybeAssignWithoutJSX (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/plugins/typescript.js:1580:45)
+    at tryRunOrWebpackError (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:312989)
+    at __webpack_require_module__ (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:13:28858), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:13:26012)
+    at /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:130328
+    at symbolIterator (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+-- inner error --
+SyntaxError: Unexpected token, expected "," (88:19)
+    at unexpected (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:99:15)
+    at expect (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/util.js:86:5)
+    at parseObj (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:759:20)
+    at parseExprAtom (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:553:7)
+    at parseExprSubscripts (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:276:20)
+    at parseMaybeUnary (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:257:20)
+    at parseExprOps (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:185:20)
+    at parseMaybeConditional (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:157:20)
+    at baseParseMaybeAssign (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/traverser/expression.js:142:20)
+    at tsParseMaybeAssignWithoutJSX (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/sucrase/dist/parser/plugins/typescript.js:1580:45)
+    at Object.<anonymous> (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/deepanshuchaudhary/Desktop/Advait/src/app/globals.css:1:7)
+    at /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:922493
+    at Hook.eval (eval at create (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:13:28636), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:13:25906)
+    at /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:131198
+    at tryRunOrWebpackError (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:312943)
+    at __webpack_require_module__ (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+
+Generated code for /Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/deepanshuchaudhary/Desktop/Advait/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/deepanshuchaudhary/Desktop/Advait/src/app/globals.css
+
+Import trace for requested module:
+./src/app/globals.css
+
+
+> Build failed because of webpack errors
