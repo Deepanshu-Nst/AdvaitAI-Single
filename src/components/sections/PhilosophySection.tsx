@@ -2,113 +2,126 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Users, ShieldCheck, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+const stats = [
+  {
+    number: "60%",
+    title: "Faster Reporting",
+    desc: "Re-engineered data pipelines cut compliance reporting times from weeks to hours for top-tier FinTechs.",
+    color: "brand-primary"
+  },
+  {
+    number: "$40M",
+    title: "Capex Saved",
+    desc: "Deployed predictive analytics across Fortune 500 logistics chains, aggressively optimizing route delays.",
+    color: "white"
+  },
+  {
+    number: "3 Wks",
+    title: "To Production",
+    desc: "We bypass research theatre. We audit, build, and deploy custom LLMs directly into existing stacks.",
+    color: "white"
+  }
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
 
 export default function PhilosophySection() {
   return (
-    <section className="py-24 bg-[#F8F9FF] overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section className="py-0 bg-[#111111] text-white overflow-hidden">
+      <div className="flex flex-col lg:flex-row w-full">
+        
+        {/* Left - Massive Image */}
+        <div className="w-full lg:w-1/2 h-[500px] lg:h-auto relative group overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:scale-105 transition-transform duration-[2s] ease-out"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1600&auto=format&fit=crop')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111111] opacity-60 hidden lg:block" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#111111] opacity-60 lg:hidden" />
           
-          {/* Left - Abstract Geometric SVG */}
+          {/* subtle floating element for wow factor */}
           <motion.div 
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="w-full lg:w-1/2 flex justify-center"
+            animate={{ y: [0, -10, 0] }} 
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="absolute top-12 left-12 w-24 h-24 border border-brand-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm"
           >
-            <svg viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-[480px] h-auto drop-shadow-xl">
-              <motion.circle 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                cx="200" cy="240" r="160" stroke="url(#paint0_linear)" strokeWidth="2" strokeDasharray="4 8" 
-              />
-              <motion.circle 
-                animate={{ rotate: -360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                cx="200" cy="240" r="120" stroke="url(#paint1_linear)" strokeWidth="1" strokeDasharray="10 10" 
-              />
-              <circle cx="200" cy="240" r="80" fill="url(#paint2_linear)" fillOpacity="0.1" stroke="#3B5BDB" strokeWidth="2" />
-              
-              {/* Nodes and interconnected lines */}
-              <path d="M200 40 L200 160 M200 320 L200 440 M40 240 L120 240 M280 240 L360 240" stroke="#3B5BDB" strokeWidth="2" strokeOpacity="0.4" />
-              <path d="M86 126 L143 183 M257 297 L314 354 M314 126 L257 183 M143 297 L86 354" stroke="#7048E8" strokeWidth="2" strokeOpacity="0.3" />
+            <div className="w-2 h-2 bg-brand-primary rounded-full" />
+          </motion.div>
+        </div>
 
-              <circle cx="200" cy="40" r="6" fill="#3B5BDB" />
-              <circle cx="200" cy="440" r="6" fill="#3B5BDB" />
-              <circle cx="40" cy="240" r="6" fill="#3B5BDB" />
-              <circle cx="360" cy="240" r="6" fill="#7048E8" />
-              <circle cx="86" cy="126" r="6" fill="#7048E8" />
-              <circle cx="314" cy="354" r="6" fill="#3B5BDB" />
-              <circle cx="314" cy="126" r="6" fill="#7048E8" />
-              <circle cx="86" cy="354" r="6" fill="#3B5BDB" />
-
-              <defs>
-                <linearGradient id="paint0_linear" x1="40" y1="240" x2="360" y2="240" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#3B5BDB" />
-                  <stop offset="1" stopColor="#7048E8" />
-                </linearGradient>
-                <linearGradient id="paint1_linear" x1="200" y1="80" x2="200" y2="400" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#7048E8" />
-                  <stop offset="1" stopColor="#00C9A7" />
-                </linearGradient>
-                <linearGradient id="paint2_linear" x1="120" y1="160" x2="280" y2="320" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#3B5BDB" />
-                  <stop offset="1" stopColor="#00C9A7" />
-                </linearGradient>
-              </defs>
-            </svg>
+        {/* Right - Text */}
+        <div className="w-full lg:w-1/2 px-6 md:px-16 py-24 md:py-32 flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-[#9CA3AF] text-[12px] font-bold tracking-[0.2em] mb-6 uppercase border-b border-white/20 pb-2 inline-block">
+              Proof Over Philosophy
+            </div>
+            <h2 className="text-[40px] md:text-[56px] font-bold text-white leading-[1.05] mb-16 tracking-tight">
+              Outcomes You <br className="hidden md:block"/> Can Measure.
+            </h2>
+          </motion.div>
+            
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-12 max-w-xl"
+          >
+            {stats.map((stat, i) => (
+              <motion.div 
+                key={i} 
+                variants={itemVariants}
+                className={`border-l-[2px] ${stat.color === 'brand-primary' ? 'border-brand-primary' : 'border-white/20'} pl-8 group cursor-pointer hover:border-brand-primary transition-colors duration-500`}
+              >
+                <div className="flex items-baseline gap-4 mb-3 transform origin-left group-hover:scale-105 transition-transform duration-500 ease-out">
+                  <span className="text-[48px] md:text-[64px] font-bold text-white leading-none tracking-tighter drop-shadow-lg">
+                    {stat.number}
+                  </span>
+                  <h3 className={`text-[12px] font-bold uppercase tracking-[0.2em] ${stat.color === 'brand-primary' ? 'text-brand-primary' : 'text-white group-hover:text-brand-primary'} transition-colors`}>
+                    {stat.title}
+                  </h3>
+                </div>
+                <p className="text-[16px] md:text-[18px] font-light text-white/50 leading-relaxed group-hover:text-white/80 transition-colors duration-500">
+                  {stat.desc}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
 
-          {/* Right - Text */}
-          <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+          >
+            <Link 
+              href="/insights" 
+              className="mt-16 inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group"
             >
-              <div className="text-brand-primary text-[11px] font-semibold tracking-[0.12em] mb-4 uppercase">
-                OUR PHILOSOPHY
-              </div>
-              <h2 className="text-[44px] font-bold text-brand-text leading-tight mb-8">
-                All United as One
-              </h2>
-              
-              <div className="space-y-12">
-                <div className="border-l border-brand-primary pl-6">
-                  <h3 className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-primary mb-2">What We Do</h3>
-                  <p className="text-[18px] md:text-[22px] font-light text-[#1A1A1A] leading-snug">
-                    We architect enterprise AI solutions that move beyond proof-of-concept, delivering quantifiable operational leverage at an institutional scale.
-                  </p>
-                </div>
-                
-                <div className="border-l border-gray-300 pl-6">
-                  <h3 className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">How We Do It</h3>
-                  <p className="text-[18px] md:text-[22px] font-light text-[#4B5563] leading-snug">
-                    By bridging deep sector expertise with cutting-edge engineering. We supply strategic framing, rigorous execution, and cultural alignment.
-                  </p>
-                </div>
-
-                <div className="border-l border-gray-300 pl-6">
-                  <h3 className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-400 mb-2">Why It Works</h3>
-                  <p className="text-[18px] md:text-[22px] font-light text-[#4B5563] leading-snug">
-                    Transformation fails when technology ignores people. Our systems are adopted rapidly because they are designed to amplify human capability, not replace it.
-                  </p>
-                </div>
-              </div>
-
-              <Link 
-                href="/about" 
-                className="inline-block border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition-colors duration-300 rounded-[4px] px-6 py-3 text-[14px] font-semibold"
-              >
-                Learn more about us →
-              </Link>
-            </motion.div>
-          </div>
-
+              Examine the case studies
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+            </Link>
+          </motion.div>
         </div>
+
       </div>
     </section>
   );

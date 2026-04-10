@@ -1,143 +1,100 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-import { Canvas } from "@react-three/fiber";
-import { Sphere, MeshDistortMaterial } from "@react-three/drei";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
-  const [init, setInit] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
-
-  const particlesOptions = useMemo(() => ({
-    background: { color: { value: "transparent" } },
-    fpsLimit: 60,
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "grab" },
-      },
-      modes: {
-        grab: { distance: 200, links: { opacity: 0.8 } }
-      }
-    },
-    particles: {
-      color: { value: ["#ffffff", "#3B5BDB", "#7048E8"] },
-      links: {
-        color: "#ffffff",
-        distance: 150,
-        enable: true,
-        opacity: 0.2,
-        width: 1,
-      },
-      move: {
-        enable: true,
-        outModes: { default: "out" as const },
-        speed: 1,
-      },
-      number: { density: { enable: true, area: 1000 }, value: 50 },
-      opacity: { value: 0.4 },
-      shape: { type: "circle" },
-      size: { value: { min: 1, max: 2 } },
-    },
-    detectRetina: true,
-  }), []);
+  const trendingInsights = [
+    { title: "Generative AI in Financial Services", category: "White Paper" },
+    { title: "Supply Chain Resilience for 2027", category: "Report" },
+    { title: "The New Economics of Compute", category: "Article" }
+  ];
 
   return (
-    <section className="relative w-full h-[100svh] bg-[#0A0A1A] overflow-hidden flex items-center">
-      {/* Particles Background with interaction */}
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={particlesOptions}
-          className="absolute inset-0 z-0 mix-blend-screen"
-        />
-      )}
+    <section className="relative w-full min-h-[100svh] bg-[#0A0A0A] overflow-hidden flex flex-col justify-end pb-12 pt-32">
+      {/* Background Image with Dark Gradient Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity scale-105 transform origin-bottom transition-transform duration-[20s] ease-out hover:scale-110"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-[#0A0A0A]/40 z-10" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 flex w-full h-full items-center justify-between">
+      <div className="container mx-auto px-6 md:px-12 relative z-20 flex flex-col justify-between h-full flex-grow mt-12">
         
-        {/* Left Content */}
-        <div className="max-w-[900px] w-full flex flex-col items-start justify-center pt-24 z-20 pointer-events-none">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
-            className="text-white text-[10px] md:text-[12px] font-bold tracking-[0.3em] mb-10 uppercase flex items-center gap-4 opacity-70"
-          >
-            <span className="w-12 h-[1px] bg-brand-primary"></span>
-            Intelligence Applied
-          </motion.div>
-
-          <div className="overflow-hidden mb-8 py-2">
-            <motion.h1 
-              initial={{ y: "100%", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1], delay: 0.5 }}
-              className="text-white text-[50px] md:text-[70px] lg:text-[86px] font-bold leading-[1.05] tracking-tight pointer-events-auto"
+        {/* Main Content Area */}
+        <div className="flex flex-col lg:flex-row justify-between items-end gap-16 mt-auto">
+          
+          <div className="max-w-[800px] w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
+              className="mb-8"
             >
-              Where AI Moves <br />
-              <span className="text-white">from Prototype to Impact.</span>
-            </motion.h1>
+              <h1 className="text-[64px] md:text-[80px] lg:text-[110px] font-bold tracking-tighter leading-[0.9] text-white">
+                Aligned <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40">
+                  Intelligence.
+                </span>
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
+              className="text-[18px] md:text-[22px] font-light text-[#E5E7EB] max-w-[600px] leading-[1.6]"
+            >
+              We build AI systems that actually get used. From prototype to production. No AI theatre. We build intelligent systems that reduce cost, ship faster, and drive real business adoption.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1 }}
+              className="mt-12"
+            >
+              <Link
+                href="/#what-we-do"
+                className="bg-brand-primary text-white px-8 py-4 text-[13px] font-bold uppercase tracking-[0.15em] hover:bg-white hover:text-[#0A0A0A] transition-colors duration-500 inline-flex items-center gap-4 group"
+              >
+                Discover Our Capabilities 
+                <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" />
+              </Link>
+            </motion.div>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 2, ease: "easeOut", delay: 1.2 }}
-            className="text-[18px] md:text-[22px] font-light text-[#E5E7EB] max-w-[600px] leading-[1.7] border-l border-brand-primary pl-6 ml-1 mt-4 pointer-events-auto"
-          >
-            We don't build experiments. We architect enterprise-grade intelligence systems that reduce friction, scale operations, and deliver undeniable strategic leverage.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.19, 1, 0.22, 1], delay: 1.6 }}
-            className="flex flex-col sm:flex-row gap-6 mt-16 items-center pointer-events-auto"
-          >
-            <Link
-              href="/#what-we-do"
-              className="bg-brand-primary text-white px-10 py-5 text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#0A0A1A] transition-colors duration-500 flex items-center justify-center gap-4 w-full sm:w-auto overflow-hidden group"
+          {/* Floating Insight Cards (BCG Style) */}
+          <div className="w-full lg:w-[400px] flex flex-col gap-4">
+            <motion.div
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 1, delay: 1.2 }}
             >
-              Explore Capabilities 
-              <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" />
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Right Content - Abstract Refined Shape (Desktop Only) */}
-        <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[700px] h-[700px] z-0 pointer-events-none opacity-[0.9]">
-          <Canvas camera={{ position: [0, 0, 4] }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[2, 2, 2]} intensity={2} color="#3B5BDB" />
-            <directionalLight position={[-2, -2, -2]} intensity={1} color="#7048E8" />
+              <h3 className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/50 mb-4 border-b border-white/20 pb-2">Trending Insights</h3>
+            </motion.div>
             
-            <Sphere args={[1.6, 64, 64]} scale={1.2}>
-              <MeshDistortMaterial
-                color="#3B5BDB"
-                attach="material"
-                distort={0.4}
-                speed={1.5}
-                roughness={0.2}
-                metalness={0.8}
-                wireframe={true}
-                transparent={true}
-                opacity={0.6}
-              />
-            </Sphere>
-          </Canvas>
-          {/* Edge gradient fade to blend 3D */}
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A1A] z-10" />
+            <div className="flex flex-col gap-3">
+              {trendingInsights.map((insight, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 + (idx * 0.15), ease: [0.19, 1, 0.22, 1] }}
+                >
+                  <Link href="/insights" className="group flex justify-between items-center bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 px-6 py-5 cursor-pointer transition-all duration-300">
+                    <div>
+                      <span className="text-[10px] uppercase tracking-widest text-brand-primary block mb-2">{insight.category}</span>
+                      <h4 className="text-white text-[15px] max-w-[250px] font-medium leading-snug group-hover:text-brand-primary transition-colors">{insight.title}</h4>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-white transition-colors group-hover:translate-x-1" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

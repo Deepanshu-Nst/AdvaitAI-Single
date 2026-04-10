@@ -3,10 +3,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm as useReactHookForm } from "react-hook-form";
-import { MapPin, Mail, Phone, ExternalLink } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 
 const formSchema = z.object({
@@ -21,10 +20,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const services = [
-  "Business Consulting", "IT Consulting", "Training & Upskilling", 
-  "Information Security", "Application Development", "Business Analytics", 
-  "Cloud Application Development", "Database Development", 
-  "User Experience Design", "Web Development"
+  "AI System Architecture", "LLM Integration", "Data Pipeline Automation", 
+  "Risk & Compliance AI", "Supply Chain Analytics", "Something Else"
 ];
 
 export default function ContactSection() {
@@ -56,153 +53,147 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="contact">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+    <section className="py-32 bg-[#0A0A0A] relative overflow-hidden" id="contact">
+      {/* Abstract floating blur */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
+
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 lg:gap-32 items-start">
           
           {/* Left - Info */}
           <motion.div 
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-[45%]"
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-[40%] lg:sticky lg:top-32"
           >
-            <div className="text-brand-primary text-[11px] font-semibold tracking-[0.12em] uppercase mb-4">
-              CONNECT WITH US
+            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+              INITIATE CONTACT
             </div>
-            <h2 className="text-[40px] md:text-[56px] font-light text-[#1A1A1A] mb-6 leading-[1.1]">
-              Let&apos;s Build Something Intelligent Together.
+            <h2 className="text-[48px] md:text-[64px] font-bold text-white mb-8 leading-[1.05] tracking-tight">
+              Tell us your problem. <br/>
+              <span className="text-white/40">We&apos;ll tell you if AI can fix it.</span>
             </h2>
-            <p className="text-[18px] md:text-[22px] font-light text-[#4B5563] mb-4 leading-relaxed">
-              Typical engagements start within 2 weeks.
-            </p>
-            <p className="text-[16px] text-[#9CA3AF] mb-12 leading-relaxed max-w-sm">
-              Reach out to discuss your organizational challenge. Our partners respond within 24 hours.
+            <p className="text-[18px] md:text-[22px] font-light text-white/70 mb-16 leading-relaxed">
+              We don&apos;t waste time on endless discovery. Drop the details. We&apos;ll give you a straight answer on feasibility, timeline, and ROI.
             </p>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-surface rounded-lg shrink-0">
-                  <Mail className="w-6 h-6 text-brand-primary" />
+            <div className="space-y-12">
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 border border-white/20 bg-transparent rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
+                  <Mail className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-brand-text mb-1">Email</h4>
-                  <a href="mailto:hello@advaitai.in" className="text-gray-500 hover:text-brand-primary transition-colors">hello@advaitai.in</a>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">Direct Line</h4>
+                  <a href="mailto:hello@advaitai.in" className="text-[18px] text-white hover:text-brand-primary transition-colors">hello@advaitai.in</a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-surface rounded-lg shrink-0">
-                  <Phone className="w-6 h-6 text-brand-primary" />
+              <div className="flex items-center gap-6 group">
+                <div className="w-14 h-14 border border-white/20 bg-transparent rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
+                  <Phone className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-brand-text mb-1">Phone</h4>
-                  <a href="tel:+919876543210" className="text-gray-500 hover:text-brand-primary transition-colors">+91 98765 43210</a>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">Global Office</h4>
+                  <a href="tel:+919876543210" className="text-[18px] text-white hover:text-brand-primary transition-colors">+91 98765 43210</a>
                 </div>
               </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-brand-surface rounded-lg shrink-0">
-                  <MapPin className="w-6 h-6 text-brand-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-brand-text mb-1">Offices</h4>
-                  <p className="text-gray-500">Bengaluru | Delhi NCR | Mumbai</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 pt-8 border-t border-gray-100 flex gap-4">
-              {['LinkedIn', 'Twitter', 'GitHub'].map(social => (
-                <Link key={social} href="#" className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm font-medium hover:border-brand-primary hover:text-brand-primary transition-colors">
-                  {social} <ExternalLink className="w-3 h-3" />
-                </Link>
-              ))}
             </div>
           </motion.div>
 
-          {/* Right - Form */}
+          {/* Right - Floating Clean Form */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-[55%]"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-full lg:w-[60%]"
           >
-            <div className="bg-white rounded-2xl shadow-xl shadow-brand-primary/5 border border-gray-100 p-8 md:p-12">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-text mb-2">Full Name *</label>
-                    <input 
-                      {...register("fullName")}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all"
-                      placeholder="Jane Doe"
-                    />
-                    {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-text mb-2">Work Email *</label>
-                    <input 
-                      {...register("email")}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all"
-                      placeholder="jane@company.com"
-                    />
-                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-text mb-2">Company Name</label>
-                    <input 
-                      {...register("company")}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all"
-                      placeholder="Acme Corp"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-brand-text mb-2">Phone Number</label>
-                    <input 
-                      {...register("phone")}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all"
-                      placeholder="+91 00000 00000"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-brand-text mb-2">Select Service</label>
-                  <select 
-                    {...register("service")}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all text-gray-700"
-                  >
-                    <option value="">Please select the area of interest...</option>
-                    {services.map(s => <option key={s} value={s}>{s}</option>)}
-                  </select>
-                  {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service.message}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-brand-text mb-2">Message *</label>
-                  <textarea 
-                    {...register("message")}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all resize-none"
-                    placeholder="Tell us about your challenges and goals..."
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-12 max-w-2xl mx-auto lg:mr-0 pt-4">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="relative group">
+                  <input 
+                    {...register("fullName")}
+                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    placeholder="Full Name"
+                    id="fullName"
                   />
-                  {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+                  <label htmlFor="fullName" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Full Name *</label>
+                  {errors.fullName && <p className="text-red-400 text-xs mt-2 absolute">{errors.fullName.message}</p>}
                 </div>
+                <div className="relative group">
+                  <input 
+                    {...register("email")}
+                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    placeholder="Work Email"
+                    id="email"
+                  />
+                  <label htmlFor="email" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Work Email *</label>
+                  {errors.email && <p className="text-red-400 text-xs mt-2 absolute">{errors.email.message}</p>}
+                </div>
+              </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="relative group">
+                  <input 
+                    {...register("company")}
+                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    placeholder="Company"
+                    id="company"
+                  />
+                  <label htmlFor="company" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Company Name</label>
+                </div>
+                <div className="relative group">
+                  <input 
+                    {...register("phone")}
+                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    placeholder="Phone"
+                    id="phone"
+                  />
+                  <label htmlFor="phone" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Phone Number</label>
+                </div>
+              </div>
+
+              <div className="relative">
+                <select 
+                  {...register("service")}
+                  className="w-full bg-transparent border-b border-white/20 text-white text-[16px] py-4 focus:outline-none focus:border-brand-primary transition-colors appearance-none peer"
+                  id="service"
+                >
+                  <option value="" className="bg-[#111111] text-white">Select operational bottleneck...</option>
+                  {services.map(s => <option key={s} value={s} className="bg-[#111111] text-white">{s}</option>)}
+                </select>
+                <label htmlFor="service" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-brand-primary transition-all">Priority Area</label>
+                {errors.service && <p className="text-red-400 text-xs mt-2 absolute">{errors.service.message}</p>}
+              </div>
+
+              <div className="relative pt-6">
+                <textarea 
+                  {...register("message")}
+                  rows={4}
+                  className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors resize-none peer placeholder-transparent"
+                  placeholder="Details"
+                  id="message"
+                />
+                <label htmlFor="message" className="absolute left-0 top-0 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-6 peer-placeholder-shown:text-[16px] peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-brand-primary">Operational Details *</label>
+                {errors.message && <p className="text-red-400 text-xs mt-2 absolute">{errors.message.message}</p>}
+              </div>
+
+              <div className="pt-8">
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-primary hover:bg-brand-secondary text-white font-semibold py-4 rounded-xl transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+                  className="group relative w-full overflow-hidden bg-brand-primary text-white font-bold text-[14px] uppercase tracking-[0.2em] py-6 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message →"}
+                  <div className="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full" />
+                  <span className="relative z-10 group-hover:text-black transition-colors duration-500">
+                    {isSubmitting ? "TRANSMITTING..." : "SUBMIT INQUIRY"}
+                  </span>
                 </button>
-              </form>
-            </div>
+              </div>
+            </form>
           </motion.div>
 
         </div>

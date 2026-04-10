@@ -2,93 +2,87 @@
 
 import { motion } from "framer-motion";
 
-const testimonials = [
+const domains = [
   {
-    quote: "AdvaitAI transformed our data pipeline and reduced reporting time by 60%. Their team understood our domain deeply and delivered an exceptionally stable solution.",
-    author: "Anil Mehta",
-    role: "CTO",
-    company: "FinTech Startup",
-    initials: "AM"
+    sector: "Global Finance",
+    metrics: "Over $40B in assets processed daily through our secure, localized ML pipelines. Replacing legacy rule-based risk engines with dynamic predictive models.",
+    clients: "Top 10 Asian Banks, Leading EU Wealth Funds"
   },
   {
-    quote: "The AI training program AdvaitAI delivered upskilled our entire analytics team. Practical, insightful, and strictly industry-relevant.",
-    author: "Dr. Sunita Rao",
-    role: "Director of Innovation",
-    company: "State Health Department",
-    initials: "SR"
+    sector: "Public Sector Infrastructure",
+    metrics: "Architecting compliance-first systems for national transportation and energy grids. Zero-trust security models combined with real-time operational analytics.",
+    clients: "State Transport Nodes, National Energy Providers"
+  },
+  {
+    sector: "Industrial Supply Chains",
+    metrics: "Digital twin architectures and predictive routing systems that cut capex shrink by 22%. Fully integrated with existing ERP backbones and hardware sensors.",
+    clients: "Fortune 500 Logistics, Transnational Manufacturing"
   }
 ];
 
 export default function SocialProofSection() {
   return (
-    <section className="py-24 bg-brand-surface w-full overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 mb-16">
-        <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           className="text-center"
-        >
-          <h2 className="text-[36px] md:text-[44px] font-bold text-brand-text mb-4 leading-tight">
-            Trusted by Forward-Thinking Organizations
-          </h2>
-          <p className="text-gray-500 text-[16px] max-w-2xl mx-auto">
-            From startups to PSUs, we partner with organizations ready to lead with intelligence.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Infinite Logo Marquee */}
-      <div className="relative w-full py-8 mb-16">
-        {/* Gradients for fade effect */}
-        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-brand-surface to-transparent z-10" />
-        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-brand-surface to-transparent z-10" />
+    <section className="py-32 bg-[#0A0A0A] border-t border-white/10 w-full overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12">
         
-        <div className="flex w-fit animate-marquee">
-          {/* Double array to create seamless loop */}
-          {[...Array(16)].map((_, i) => (
-            <div key={i} className="flex items-center shrink-0 px-6">
-              <div className="w-[160px] h-[64px] bg-white border border-gray-200 rounded-lg flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 shadow-sm cursor-pointer hover:shadow-md hover:border-brand-primary/30">
-                <span className="font-bold text-gray-400 text-lg">CLIENT LOGO</span>
-              </div>
+        {/* Superior Header */}
+        <div className="mb-24 md:flex justify-between items-end gap-12">
+          <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="max-w-2xl"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-[1px] bg-brand-primary" />
+              <span className="text-white/50 text-[12px] font-bold uppercase tracking-[0.2em]">Institutional Trust</span>
             </div>
-          ))}
+            <h2 className="text-[40px] md:text-[56px] font-bold text-white leading-[1.05] tracking-tight">
+              We deploy into the world's most <span className="text-white/40">complex environments.</span>
+            </h2>
+          </motion.div>
+          
+          <motion.div
+             initial={{ opacity: 0 }}
+             whileInView={{ opacity: 1 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.3 }}
+             className="hidden md:block text-right"
+          >
+            <p className="text-[14px] text-white/40 uppercase tracking-widest font-bold">Confidential & Proprietary</p>
+            <p className="text-[12px] text-brand-primary uppercase tracking-[0.2em] mt-2">Enterprise Grade Only</p>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Testimonials */}
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {testimonials.map((test, i) => (
+        {/* The Grid of Weight */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-white/10 pt-16 gap-12 lg:gap-0">
+          {domains.map((domain, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm"
+              transition={{ delay: i * 0.15 }}
+              className={`flex flex-col group ${i !== domains.length - 1 ? 'lg:border-r lg:border-white/10 lg:pr-12' : 'lg:pl-12'}`}
             >
-              {/* Quote Mark */}
-              <div className="text-[60px] leading-none text-brand-primary/20 font-serif mb-4">&quot;</div>
-              
-              <p className="text-[16px] md:text-[18px] text-gray-700 italic mb-8 leading-relaxed">
-                {test.quote}
+              <div className="text-[28px] md:text-[32px] font-bold text-white mb-6 group-hover:text-brand-primary transition-colors duration-500">
+                {domain.sector}
+              </div>
+              <p className="text-[16px] text-white/50 font-light leading-relaxed mb-auto min-h-[120px] group-hover:text-white/80 transition-colors duration-500">
+                {domain.metrics}
               </p>
-              
-              <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-                <div className="w-12 h-12 bg-brand-primary text-white flex items-center justify-center rounded-full font-bold text-[18px]">
-                  {test.initials}
-                </div>
-                <div>
-                  <h4 className="font-bold text-brand-text text-[15px]">{test.author}</h4>
-                  <p className="text-[13px] text-gray-500">
-                    {test.role}, <span className="font-semibold text-gray-700">{test.company}</span>
-                  </p>
-                </div>
+              <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-brand-primary/30 transition-colors duration-500">
+                <span className="block text-[10px] text-white/30 uppercase tracking-[0.2em] font-bold mb-3">
+                  Representative Footprint
+                </span>
+                <span className="block text-[14px] text-white/90 font-medium leading-snug">
+                  {domain.clients}
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
