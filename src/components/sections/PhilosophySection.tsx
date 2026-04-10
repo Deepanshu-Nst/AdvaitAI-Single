@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Variants } from "framer-motion";
 
 const stats = [
   {
@@ -33,28 +34,32 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
 };
 
 export default function PhilosophySection() {
   return (
     <section className="py-0 bg-[#111111] text-white overflow-hidden">
       <div className="flex flex-col lg:flex-row w-full">
-        
+
         {/* Left - Massive Image */}
         <div className="w-full lg:w-1/2 h-[500px] lg:h-auto relative group overflow-hidden">
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center mix-blend-luminosity opacity-80 group-hover:scale-105 transition-transform duration-[2s] ease-out"
             style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=1600&auto=format&fit=crop')" }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111111] opacity-60 hidden lg:block" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#111111] opacity-60 lg:hidden" />
-          
+
           {/* subtle floating element for wow factor */}
-          <motion.div 
-            animate={{ y: [0, -10, 0] }} 
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             className="absolute top-12 left-12 w-24 h-24 border border-brand-primary/20 rounded-full flex items-center justify-center backdrop-blur-sm"
           >
@@ -74,11 +79,11 @@ export default function PhilosophySection() {
               Proof Over Philosophy
             </div>
             <h2 className="text-[40px] md:text-[56px] font-bold text-white leading-[1.05] mb-16 tracking-tight">
-              Outcomes You <br className="hidden md:block"/> Can Measure.
+              Outcomes You <br className="hidden md:block" /> Can Measure.
             </h2>
           </motion.div>
-            
-          <motion.div 
+
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -86,8 +91,8 @@ export default function PhilosophySection() {
             className="space-y-12 max-w-xl"
           >
             {stats.map((stat, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 variants={itemVariants}
                 className={`border-l-[2px] ${stat.color === 'brand-primary' ? 'border-brand-primary' : 'border-white/20'} pl-8 group cursor-pointer hover:border-brand-primary transition-colors duration-500`}
               >
@@ -112,8 +117,8 @@ export default function PhilosophySection() {
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
           >
-            <Link 
-              href="/insights" 
+            <Link
+              href="/insights"
               className="mt-16 inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group"
             >
               Examine the case studies
