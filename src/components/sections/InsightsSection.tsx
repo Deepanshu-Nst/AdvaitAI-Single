@@ -108,7 +108,7 @@ export default function InsightsSection() {
 
                 {/* Text overlay */}
                 <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
-                  <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[0.19,1,0.22,1]">
+                  <div className="transform translate-y-0 lg:translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[0.19,1,0.22,1]">
                     <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-widest mb-6 text-white overflow-hidden relative">
                       <span className="relative z-10">{insight.category}</span>
                       <div className="absolute inset-0 bg-brand-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 z-0"/>
@@ -118,7 +118,7 @@ export default function InsightsSection() {
                     </h3>
                     
                     {/* Read More Reveal */}
-                    <div className="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-4 group-hover:translate-y-0">
+                    <div className="flex items-center gap-3 lg:opacity-0 group-hover:opacity-100 transition-all duration-700 lg:translate-y-4 group-hover:translate-y-0">
                       <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-brand-primary">Process Insight</span>
                       <ArrowRight className="w-4 h-4 text-brand-primary" />
                     </div>

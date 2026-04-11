@@ -272,8 +272,8 @@ export default function Navbar() {
                 className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
               >
                 <div className="flex gap-6">
-                  <a href="#" className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">LinkedIn</a>
-                  <a href="#" className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Twitter</a>
+                  <a href="https://linkedin.com/company/advaitai" target="_blank" rel="noopener noreferrer" className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">LinkedIn</a>
+                  <a href="https://twitter.com/advaitai" target="_blank" rel="noopener noreferrer" className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest">Twitter</a>
                 </div>
                 <div className="text-[12px] font-bold text-white/50 uppercase tracking-widest">
                   hello@advaitai.in  //  Global Deployments

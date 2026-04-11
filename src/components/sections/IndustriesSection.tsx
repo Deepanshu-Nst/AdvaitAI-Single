@@ -83,13 +83,13 @@ export default function IndustriesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-opacity duration-700 pointer-events-none" />
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end z-10">
-                  <div className="transform translate-y-8 md:translate-y-12 group-hover:translate-y-0 transition-transform duration-700 ease-[0.19,1,0.22,1]">
+                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end z-10">
+                  <div className="transform translate-y-0 lg:translate-y-12 group-hover:translate-y-0 transition-transform duration-700 ease-[0.19,1,0.22,1]">
                     <h3 className="text-[28px] md:text-[36px] font-bold text-white mb-4 leading-[1.1]">
                       {ind.name}
                     </h3>
-                    <div className="h-[2px] w-8 bg-brand-primary mb-4 opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:w-16"></div>
-                    <p className="text-[16px] md:text-[18px] text-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 leading-relaxed max-w-sm">
+                    <div className="h-[2px] w-16 lg:w-8 bg-brand-primary mb-4 lg:opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:w-16"></div>
+                    <p className="text-[16px] md:text-[18px] text-white/90 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 leading-relaxed max-w-sm">
                       {ind.desc}
                     </p>
                   </div>

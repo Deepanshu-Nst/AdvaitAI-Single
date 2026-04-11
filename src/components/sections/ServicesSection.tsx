@@ -87,15 +87,15 @@ export default function ServicesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent transition-opacity duration-700 opacity-90 group-hover:opacity-60" />
                   
-                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
-                    <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                      <span className="text-brand-primary text-[12px] font-bold uppercase tracking-[0.2em] mb-4 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                  <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end z-10">
+                    <div className="transform translate-y-0 lg:translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                      <span className="text-brand-primary text-[12px] font-bold uppercase tracking-[0.2em] mb-4 block lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                         // 0{index + 1}
                       </span>
-                      <h3 className="text-[32px] md:text-[48px] font-bold leading-[1.05] tracking-tight text-white mb-4">
+                      <h3 className="text-[28px] md:text-[48px] font-bold leading-[1.05] tracking-tight text-white mb-4">
                         {cap.title}
                       </h3>
-                      <p className="text-[16px] md:text-[18px] font-light text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 max-w-xl leading-[1.6]">
+                      <p className="text-[14px] md:text-[18px] font-light text-white/90 lg:text-white/70 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 max-w-xl leading-[1.6]">
                         {cap.desc}
                       </p>
                     </div>

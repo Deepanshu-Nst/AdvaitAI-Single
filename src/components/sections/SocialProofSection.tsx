@@ -55,7 +55,7 @@ export default function SocialProofSection() {
         </div>
 
         {/* The Grid of Weight */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-white/10 pt-16 gap-12 lg:gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border-t border-white/10 pt-16 lg:pt-24 gap-0">
           {domains.map((domain, i) => (
             <motion.div
               key={i}
@@ -63,7 +63,7 @@ export default function SocialProofSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className={`flex flex-col group ${i !== domains.length - 1 ? 'lg:border-r lg:border-white/10 lg:pr-12' : 'lg:pl-12'}`}
+              className={`flex flex-col group ${i !== domains.length - 1 ? 'pb-16 mb-16 border-b lg:border-b-0 lg:pb-0 lg:mb-0 lg:border-r lg:border-white/10 lg:pr-12' : 'lg:pl-12'} border-white/10`}
             >
               <div className="text-[28px] md:text-[32px] font-bold text-white mb-6 group-hover:text-brand-primary transition-colors duration-500">
                 {domain.sector}
