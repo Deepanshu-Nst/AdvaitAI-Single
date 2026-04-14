@@ -25,9 +25,10 @@ export default function HeroSection() {
             className="mb-8"
           >
             <h1 className="text-[64px] md:text-[80px] lg:text-[110px] font-bold tracking-tighter leading-[0.9] text-white">
-              Aligned <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40">
-                Intelligence.
+              <span className="text-[20px] md:text-[24px] uppercase tracking-widest text-brand-primary block mb-6 font-normal">Our mission</span>
+              Artificial <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-accent to-white/40">
+                Aligned Intelligence.
               </span>
             </h1>
           </motion.div>
@@ -38,7 +39,7 @@ export default function HeroSection() {
             transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
             className="text-[18px] md:text-[24px] font-light text-[#E5E7EB] max-w-[700px] mx-auto md:mx-0 leading-[1.6]"
           >
-            We build AI systems that actually get used. From rapid prototype to production without the bloated timelines. No buzzwords, just code that drives real business outcomes.
+            High-precision logical intelligence enforces structured reasoning with minimal variance under complex conditions. It enables stable, reproducible inference across layered and interdependent systems.
           </motion.p>
           
           <motion.div

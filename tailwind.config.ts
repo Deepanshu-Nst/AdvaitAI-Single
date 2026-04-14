@@ -53,12 +53,12 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          primary: "#3B5BDB", // blue-indigo
-          secondary: "#7048E8", // violet-purple
-          dark: "#0A0A1A", // Dark background
-          surface: "#F8F9FF", // Surface color
-          text: "#0D0D1A", // Text primary
-          accent: "#00C9A7", // teal green highlights
+          primary: "#0EA5E9", // sky blue
+          secondary: "#1D4ED8", // strong blue
+          dark: "#020617", // slate-950
+          surface: "#0F172A", // slate-900
+          text: "#F8FAFC", // white
+          accent: "#38BDF8", // sky-400
         }
       },
       borderRadius: {

@@ -1,34 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 const useCases = [
   {
-    title: "Automating Reports",
-    desc: "Generate weekly performance reports automatically, saving 20+ hours per week.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    title: "Customer Support Bots",
-    desc: "Intelligent agents that instantly handle 80% of routine inquiries.",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    title: "Data Analysis Systems",
-    desc: "Real-time dashboards driven by AI to instantly highlight anomalies in metrics.",
+    title: "Education",
+    desc: "K-12 & university learning: Converts textbook concepts into Socratic riddles that trigger active recall instead of passive reading.",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop"
   },
   {
-    title: "Automatic Generation",
-    desc: "NLP + knowledge graphs for template generation across industries.",
+    title: "Corporate Training",
+    desc: "Transforms compliance and onboarding materials into engaging scenario-based puzzles.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Entertainment",
+    desc: "Generates dynamic, context-aware riddles for gaming and interactive media experiences.",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    title: "Marketing",
+    desc: "Creates interactive brand campaigns that challenge consumers and boost engagement.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
   },
   {
-    title: "Flexible Deployment",
-    desc: "Deploy across SaaS, dedicated, on-prem (air-gapped), and VPC environments.",
+    title: "Assessment",
+    desc: "Automates the generation of lateral thinking tests for recruitment and evaluation.",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop"
   }
 ];
@@ -83,25 +83,53 @@ export default function UseCasesSection() {
             className="w-full lg:w-2/3 pointer-events-none relative z-10"
           >
             <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
-              Use Cases
+              ALGORITHM APPLICATIONS
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-              Real Impact. <br /> Not Theory.
+              Automatic riddle <br /> generation across industries
             </h2>
             <p className="text-[18px] md:text-[20px] font-light text-white/50 leading-[1.6]">
-              Explore how the algorithm works across domains. We build practical solutions that integrate directly into your workflow to solve actual problems.
+              NLP + knowledge graph + riddle templates. Click any use case to explore how the algorithm works in that domain.
             </p>
           </motion.div>
         </div>
       </div>
 
-      <div className="relative z-20 w-full overflow-hidden pb-12">
+      <div 
+        className="relative z-20 w-full overflow-hidden pb-12"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
+      >
+        
+        {/* Floating Navigation Arrows */}
+        <div className={`absolute left-6 top-1/2 -translate-y-1/2 z-30 transition-opacity duration-300 pointer-events-none flex w-[calc(100%-3rem)] justify-between ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <button 
+            onClick={() => {
+              if (containerRef.current) {
+                containerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+              }
+            }}
+            className="w-16 h-16 rounded-full border-2 border-brand-primary bg-black/40 backdrop-blur-sm flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-colors pointer-events-auto shadow-[0_0_20px_#0EA5E9]"
+          >
+            <ArrowLeft className="w-8 h-8" />
+          </button>
+          
+          <button 
+            onClick={() => {
+              if (containerRef.current) {
+                containerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+              }
+            }}
+            className="w-16 h-16 rounded-full border-2 border-brand-primary bg-black/40 backdrop-blur-sm flex items-center justify-center text-brand-primary hover:bg-brand-primary hover:text-white transition-colors pointer-events-auto shadow-[0_0_20px_#0EA5E9]"
+          >
+            <ArrowRight className="w-8 h-8" />
+          </button>
+        </div>
+
         <div 
           ref={containerRef}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onTouchStart={() => setIsHovered(true)}
-          onTouchEnd={() => setIsHovered(false)}
           className="flex gap-6 px-3 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing w-full"
         >
           {duplicatedItems.map((useCase, index) => (

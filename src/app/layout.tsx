@@ -11,9 +11,25 @@ import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
+import { Viewport } from "next";
+
+export const viewport: Viewport = {
+  themeColor: "#0EA5E9",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
-  title: "AdvaitAI — Artificial✗Aligned Intelligence | AI & Business Consulting",
+  title: {
+    default: "AdvaitAI — Artificial Aligned Intelligence",
+    template: "%s | AdvaitAI",
+  },
   description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: "AdvaitAI" }],
+  creator: "AdvaitAI",
+  metadataBase: new URL(siteConfig.url),
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -24,10 +40,10 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: "AdvaitAI Platform",
       },
     ],
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -35,7 +51,25 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
+    creator: "@advaitai",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

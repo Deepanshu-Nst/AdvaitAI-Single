@@ -42,18 +42,18 @@ const GlowCard = ({ children, index }: { children: React.ReactNode; index: numbe
 const reasons = [
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "Fast Execution",
-    desc: "We don't spend months planning. We build rapid prototypes, validate, and iterate quickly to ensure you never lose momentum against market vectors."
+    title: "Versatile Environments",
+    desc: "Deploy across SaaS, dedicated, on-prem (air-gapped), and VPC environments with zero friction."
   },
   {
     icon: <Hammer className="w-8 h-8" />,
-    title: "Practical AI",
-    desc: "No buzzwords or theoretical models. We focus on AI that actually works in production, scaling from script to robust cluster without breaking a sweat."
+    title: "Hardware Agnostic",
+    desc: "Full support for CPU, GPU, MPS, and TPU infrastructure to maximize performance and efficiency."
   },
   {
     icon: <Target className="w-8 h-8" />,
-    title: "Real Outcomes",
-    desc: "Our success is measured by the hours you save and the new capabilities you gain. We align our intelligence systems strictly to your business KPIs."
+    title: "Enterprise Grade",
+    desc: "Built from the ground up for strict security, compliance, and seamless performance at global scale."
   }
 ];
 
@@ -80,13 +80,13 @@ export default function WhyUsSection() {
               className="relative z-10 pointer-events-none"
             >
               <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
-                Why Us
+                DEPLOY
               </div>
-              <motion.h2 style={{ y: yText }} className="text-[48px] md:text-[80px] font-bold leading-[1] tracking-tight mb-8 drop-shadow-2xl">
-                A capability <br /> partner, <br /> not a slide <br /> deck factory.
+              <motion.h2 style={{ y: yText }} className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8 drop-shadow-2xl">
+                Flexible <br /> Deployment <br /> Architecture
               </motion.h2>
               <p className="text-[18px] md:text-[22px] font-light text-white/50 leading-[1.6] max-w-md">
-                We are a smart, capable, early-stage AI team that integrates seamlessly with your operations. We don't bring consultant bloat; we bring builders who understand your product.
+                Built for security, compliance, and performance at scale. Production-ready in minutes.
               </p>
             </motion.div>
           </div>

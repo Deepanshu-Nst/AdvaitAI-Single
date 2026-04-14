@@ -8,28 +8,28 @@ import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 const capabilities = [
   {
-    title: "Digital Transformation & AI",
-    desc: "We architect enterprise AI systems that automate operations, integrate custom LLMs, and build intelligent data mesh architectures.",
-    slug: "digital-transformation",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
-  },
-  {
-    title: "Strategy & Operations",
-    desc: "Business model innovation and supply chain optimizations that deliver undeniable strategic leverage and risk mitigation.",
-    slug: "strategy-operations",
+    title: "Parse",
+    desc: "Accurately parse complex PDFs, spreadsheets, presentations, and documents (including revisions). Extract structured content.",
+    slug: "parse",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
   },
   {
-    title: "Technology & Security",
-    desc: "From cloud modernization to hardcore cybersecurity audits and scalable DevOps pipelines.",
-    slug: "technology-security",
+    title: "Model",
+    desc: "Construct structured representations capturing latent patterns and dependencies. Transform unstructured inputs into formal, interpretable models.",
+    slug: "model",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"
   },
   {
-    title: "Design & Experience",
-    desc: "Creating frictionless human-centered design systems and customer journey mapping for next-gen interfaces.",
-    slug: "design-experience",
+    title: "Systems",
+    desc: "Construct environment models capturing entities, relationships, and state transitions. Encode context across temporal, spatial, and logical dimensions.",
+    slug: "systems",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80"
+  },
+  {
+    title: "Assurance",
+    desc: "Prebuilt guardrails for privacy, safety, security, and alignment by design. Enforce constraints, access control, and policy-aware system behavior.",
+    slug: "assurance",
+    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80"
   }
 ];
 
@@ -53,12 +53,14 @@ export default function ServicesSection() {
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
                 className="relative z-10 pointer-events-none"
               >
-                <div className="w-16 h-[1px] bg-brand-primary mb-8" />
+                <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+                  OUR PLATFORM
+                </div>
                 <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-                  What We <br /> Do
+                  A powerful <br /> framework
                 </h2>
                 <p className="text-[18px] md:text-[20px] font-light text-white/50 leading-[1.6] mb-10 max-w-sm">
-                  We don't do superficial advice. We deliver deep operational transformations engineered for scale.
+                  For building and managing advanced workflows.
                 </p>
                 <Link 
                   href="/capabilities" 
