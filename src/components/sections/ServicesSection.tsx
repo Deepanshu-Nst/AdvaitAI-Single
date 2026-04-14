@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 const capabilities = [
   {
@@ -42,17 +43,19 @@ export default function ServicesSection() {
         <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 relative">
           
           {/* Left Column: Sticky Heading */}
-          <div className="w-full lg:w-[40%] relative">
-            <div className="lg:sticky lg:top-40 overflow-hidden">
+          <div className="w-full lg:w-[40%] relative mt-6 hover:cursor-grab">
+            <div className="lg:sticky lg:top-40 relative">
+              <ParticleNetwork idClassName="services-particles" opacity={0.3} />
               <motion.div
                 initial={{ y: 30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
+                className="relative z-10 pointer-events-none"
               >
                 <div className="w-16 h-[1px] bg-brand-primary mb-8" />
                 <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-                  Core <br /> Capabilities
+                  What We <br /> Do
                 </h2>
                 <p className="text-[18px] md:text-[20px] font-light text-white/50 leading-[1.6] mb-10 max-w-sm">
                   We don't do superficial advice. We deliver deep operational transformations engineered for scale.

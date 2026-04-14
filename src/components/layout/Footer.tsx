@@ -1,30 +1,17 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-white pt-24 pb-12 font-light">
-      <div className="container mx-auto px-6 md:px-12">
-        
-        {/* Top Section - Newsletter & Main Info */}
-        <div className="flex flex-col lg:flex-row justify-between gap-16 mb-24 border-b border-white/10 pb-20">
-          
+    <footer className="bg-[#111111] text-white pt-24 pb-12 font-light relative overflow-hidden">
+      <ParticleNetwork idClassName="footer-particles" opacity={0.3} />
+      <div className="container mx-auto px-6 md:px-12 relative z-10 pointer-events-none">
+        <div className="flex flex-col lg:flex-row justify-between gap-16 mb-24 border-b border-white/10 pb-20 pointer-events-auto">
           <div className="w-full lg:w-1/2">
-            <h3 className="text-[32px] md:text-[44px] font-light leading-[1.1] mb-6">Global Intelligence, <br/>Delivered Weekly.</h3>
-            <p className="text-[#9CA3AF] text-[16px] mb-8 max-w-md">
-              Subscribe to the AdvaitAI newsletter for executive insights on artificial intelligence, business strategy, and technological transformation.
+            <h3 className="text-[32px] md:text-[44px] font-light leading-[1.1] mb-6">Build the future.<br/>Without the bloat.</h3>
+            <p className="text-[#9CA3AF] text-[16px] max-w-md">
+              AdvaitAI builds practical AI solutions for modern startups and forward-thinking enterprises.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
-              <input 
-                type="email" 
-                placeholder="Email address" 
-                className="bg-transparent border-b border-white/30 text-white px-2 py-3 flex-grow outline-none focus:border-brand-primary transition-colors text-[16px]"
-                required
-              />
-              <button type="submit" className="flex items-center justify-between gap-2 px-6 py-3 bg-white text-[#111111] hover:bg-brand-primary hover:text-white transition-colors font-bold text-[13px] uppercase tracking-widest shrink-0">
-                Subscribe <ArrowRight className="w-4 h-4" />
-              </button>
-            </form>
           </div>
 
           <div className="w-full lg:w-[40%] flex flex-col items-start lg:items-end text-left lg:text-right">
@@ -37,65 +24,35 @@ export default function Footer() {
             </Link>
             <h4 className="text-[20px] font-light mb-2">AdvaitAI Technologies</h4>
              <p className="text-[#9CA3AF] text-[15px] max-w-xs mb-8">
-              Designing intelligent systems that solve real-world problems through data, design, and human-centered innovation.
+              hello@advaitai.in
             </p>
-             <Link href="/contact" className="text-[13px] font-bold uppercase tracking-widest border-b border-white pb-1 hover:text-brand-primary hover:border-brand-primary transition-colors">
-               Contact Us
-             </Link>
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-white hover:text-brand-primary transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#" className="text-white hover:text-brand-primary transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+              <a href="#" className="text-white hover:text-brand-primary transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="#" className="text-white hover:text-brand-primary transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Links Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mb-24">
-          <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-widest text-white/50 mb-8">Capabilities</h4>
-            <ul className="flex flex-col gap-4 text-[15px] font-light text-[#E5E7EB]">
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Digital Transformation</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Strategy & Operations</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Technology & Security</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Design & Experience</Link></li>
-            </ul>
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 border-t border-white/10 pt-8 pointer-events-auto">
+          <div className="text-[14px] text-[#9CA3AF] flex flex-col md:flex-row gap-4 md:gap-8">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Preferences</Link>
+            <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
-          <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-widest text-white/50 mb-8">Industries</h4>
-            <ul className="flex flex-col gap-4 text-[15px] font-light text-[#E5E7EB]">
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Financial Institutions</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Health Care</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Public Sector</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Consumer Products</Link></li>
-            </ul>
+          <div className="text-[14px] text-[#9CA3AF]">
+            © {new Date().getFullYear()} AdvaitAI. All rights reserved.
           </div>
-          <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-widest text-white/50 mb-8">Company</h4>
-            <ul className="flex flex-col gap-4 text-[15px] font-light text-[#E5E7EB]">
-              <li><Link href="/about" className="hover:text-brand-primary transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Locations</Link></li>
-              <li><Link href="#" className="hover:text-brand-primary transition-colors">Alumni Network</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-widest text-white/50 mb-8">Follow Us</h4>
-            <ul className="flex flex-col gap-4 text-[15px] font-light text-[#E5E7EB]">
-              <li><a href="#" className="hover:text-brand-primary transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Twitter / X</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-12 border-t border-white/10 text-[13px] text-[#9CA3AF]">
-          <ul className="flex flex-wrap items-center gap-6">
-            <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Terms of Use</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Cookie Preferences</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors">Accessability</Link></li>
-          </ul>
-          <p>
-            © 2025 AdvaitAI Technologies. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

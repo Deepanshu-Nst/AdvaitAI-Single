@@ -7,6 +7,7 @@ import { Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name is required"),
@@ -45,7 +46,7 @@ export default function ContactSection() {
       toast.success("Message sent! We'll be in touch within 24 hours.");
       reset();
     } catch {
-      toast.success("Message handled locally (API route needs valid keys to send real email). We will be in touch!");
+      toast.success("Message handled locally. We will be in touch!");
       reset();
     } finally {
       setIsSubmitting(false);
@@ -54,6 +55,7 @@ export default function ContactSection() {
 
   return (
     <section className="py-32 bg-[#0A0A0A] relative overflow-hidden" id="contact">
+      <ParticleNetwork idClassName="contact-particles" opacity={0.3} />
       {/* Abstract floating blur */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
 
