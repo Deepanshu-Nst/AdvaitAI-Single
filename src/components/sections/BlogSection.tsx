@@ -71,24 +71,24 @@ export default function BlogSection() {
             className="w-full lg:w-2/3 pointer-events-none relative z-10"
           >
             <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
-              Insights
+              Blogs
             </div>
           </motion.div>
         </div>
       </div>
 
       {/* Manual + Auto Horizontal Scroll */}
-      <div 
+      <div
         className="relative z-20 w-full overflow-hidden pb-12 pt-8"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={() => setIsHovered(true)}
         onTouchEnd={() => setIsHovered(false)}
       >
-        
+
         {/* Floating Navigation Arrows */}
         <div className={`absolute left-6 top-1/2 -translate-y-1/2 z-30 transition-opacity duration-300 pointer-events-none flex w-[calc(100%-3rem)] justify-between ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <button 
+          <button
             onClick={() => {
               if (containerRef.current) {
                 containerRef.current.scrollBy({ left: -350, behavior: 'smooth' });
@@ -98,8 +98,8 @@ export default function BlogSection() {
           >
             <ArrowLeft className="w-8 h-8" />
           </button>
-          
-          <button 
+
+          <button
             onClick={() => {
               if (containerRef.current) {
                 containerRef.current.scrollBy({ left: 350, behavior: 'smooth' });
