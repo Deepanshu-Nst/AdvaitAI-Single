@@ -24,13 +24,13 @@ const GlowCard = ({ children, index }: { children: React.ReactNode; index: numbe
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className="relative overflow-hidden bg-[#111111] border border-white/10 p-10 flex flex-col md:flex-row items-start gap-8 group cursor-default"
+      className="relative overflow-hidden bg-white border border-[#BFDBFE] p-10 flex flex-col md:flex-row items-start gap-8 group cursor-default rounded-lg shadow-md shadow-blue-50"
     >
       <div 
         className="pointer-events-none absolute -inset-px transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.08), transparent 40%)`
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(14,165,233,0.08), transparent 40%)`
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/0 to-brand-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -63,7 +63,7 @@ export default function WhyUsSection() {
   const yText = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="why-us" ref={containerRef} className="bg-[#0A0A0A] text-white py-32 border-t border-white/10 relative overflow-hidden">
+    <section id="why-us" ref={containerRef} className="bg-[#E8F4FD] text-[#0C2D57] py-32 border-t border-[#DBEAFE] relative overflow-hidden">
       {/* Background Graphic */}
       <div className="absolute top-1/2 left-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[200px] pointer-events-none transform -translate-y-1/2 -translate-x-1/2" />
       
@@ -82,10 +82,10 @@ export default function WhyUsSection() {
               <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
                 DEPLOY
               </div>
-              <motion.h2 style={{ y: yText }} className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8 drop-shadow-2xl">
+              <motion.h2 style={{ y: yText }} className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8 drop-shadow-sm">
                 Flexible <br /> Deployment <br /> Architecture
               </motion.h2>
-              <p className="text-[18px] md:text-[22px] font-light text-white/50 leading-[1.6] max-w-md">
+              <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] leading-[1.6] max-w-md">
                 Built for security, compliance, and performance at scale. Production-ready in minutes.
               </p>
             </motion.div>
@@ -94,12 +94,12 @@ export default function WhyUsSection() {
           <div className="w-full lg:w-[55%] flex flex-col gap-8">
             {reasons.map((reason, index) => (
               <GlowCard key={reason.title} index={index}>
-                <div className="relative z-10 w-20 h-20 shrink-0 bg-[#0A0A0A] border border-white/10 rounded-full flex items-center justify-center text-white group-hover:text-brand-primary group-hover:scale-110 group-hover:border-brand-primary/50 transition-all duration-500 shadow-xl">
+                <div className="relative z-10 w-20 h-20 shrink-0 bg-[#F0F7FF] border border-[#BFDBFE] rounded-full flex items-center justify-center text-brand-primary group-hover:text-brand-secondary group-hover:scale-110 group-hover:border-brand-primary/50 transition-all duration-500 shadow-sm">
                   {reason.icon}
                 </div>
                 <div className="relative z-10 mt-2">
-                  <h3 className="text-[28px] font-bold text-white mb-4 leading-none">{reason.title}</h3>
-                  <p className="text-[18px] font-light text-white/60 leading-[1.6]">{reason.desc}</p>
+                  <h3 className="text-[28px] font-bold text-[#0C2D57] mb-4 leading-none">{reason.title}</h3>
+                  <p className="text-[18px] font-light text-[#5B7FA5] leading-[1.6]">{reason.desc}</p>
                 </div>
               </GlowCard>
             ))}

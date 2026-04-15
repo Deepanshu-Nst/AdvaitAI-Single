@@ -28,9 +28,9 @@ export default function ParticleNetwork({ idClassName, opacity = 0.3 }: { idClas
         modes: { grab: { distance: 150, links: { opacity: opacity * 1.5 } } },
       },
       particles: {
-        color: { value: "#ffffff" },
+        color: { value: "#0EA5E9" },
         links: {
-          color: "#ffffff",
+          color: "#0EA5E9",
           distance: 150,
           enable: true,
           opacity: opacity,

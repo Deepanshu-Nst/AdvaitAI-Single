@@ -54,7 +54,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-32 bg-[#0A0A0A] relative overflow-hidden" id="contact">
+    <section className="py-32 bg-white relative overflow-hidden" id="contact">
       <ParticleNetwork idClassName="contact-particles" opacity={0.3} />
       {/* Abstract floating blur */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
@@ -73,32 +73,32 @@ export default function ContactSection() {
             <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
               INITIATE CONTACT
             </div>
-            <h2 className="text-[48px] md:text-[64px] font-bold text-white mb-8 leading-[1.05] tracking-tight">
+            <h2 className="text-[48px] md:text-[64px] font-bold text-[#0C2D57] mb-8 leading-[1.05] tracking-tight">
               Tell us your problem. <br/>
-              <span className="text-white/40">We&apos;ll tell you if AI can fix it.</span>
+              <span className="text-[#5B7FA5]">We&apos;ll tell you if AI can fix it.</span>
             </h2>
-            <p className="text-[18px] md:text-[22px] font-light text-white/70 mb-16 leading-relaxed">
+            <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] mb-16 leading-relaxed">
               We don&apos;t waste time on endless discovery. Drop the details. We&apos;ll give you a straight answer on feasibility, timeline, and ROI.
             </p>
 
             <div className="space-y-12">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 border border-white/20 bg-transparent rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
+                <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
                   <Mail className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">Direct Line</h4>
-                  <a href="mailto:hello@advaitai.in" className="text-[18px] text-white hover:text-brand-primary transition-colors">hello@advaitai.in</a>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Direct Line</h4>
+                  <a href="mailto:hello@advaitai.in" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">hello@advaitai.in</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 border border-white/20 bg-transparent rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
+                <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
                   <Phone className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/50 mb-1">Global Office</h4>
-                  <a href="tel:+919876543210" className="text-[18px] text-white hover:text-brand-primary transition-colors">+91 98765 43210</a>
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Global Office</h4>
+                  <a href="tel:+919876543210" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">+91 98765 43210</a>
                 </div>
               </div>
             </div>
@@ -118,22 +118,22 @@ export default function ContactSection() {
                 <div className="relative group">
                   <input 
                     {...register("fullName")}
-                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Full Name"
                     id="fullName"
                   />
-                  <label htmlFor="fullName" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Full Name *</label>
-                  {errors.fullName && <p className="text-red-400 text-xs mt-2 absolute">{errors.fullName.message}</p>}
+                  <label htmlFor="fullName" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Full Name *</label>
+                  {errors.fullName && <p className="text-red-500 text-xs mt-2 absolute">{errors.fullName.message}</p>}
                 </div>
                 <div className="relative group">
                   <input 
                     {...register("email")}
-                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Work Email"
                     id="email"
                   />
-                  <label htmlFor="email" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Work Email *</label>
-                  {errors.email && <p className="text-red-400 text-xs mt-2 absolute">{errors.email.message}</p>}
+                  <label htmlFor="email" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Work Email *</label>
+                  {errors.email && <p className="text-red-500 text-xs mt-2 absolute">{errors.email.message}</p>}
                 </div>
               </div>
 
@@ -141,56 +141,56 @@ export default function ContactSection() {
                 <div className="relative group">
                   <input 
                     {...register("company")}
-                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Company"
                     id="company"
                   />
-                  <label htmlFor="company" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Company Name</label>
+                  <label htmlFor="company" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Company Name</label>
                 </div>
                 <div className="relative group">
                   <input 
                     {...register("phone")}
-                    className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
+                    className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Phone"
                     id="phone"
                   />
-                  <label htmlFor="phone" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Phone Number</label>
+                  <label htmlFor="phone" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Phone Number</label>
                 </div>
               </div>
 
               <div className="relative">
                 <select 
                   {...register("service")}
-                  className="w-full bg-transparent border-b border-white/20 text-white text-[16px] py-4 focus:outline-none focus:border-brand-primary transition-colors appearance-none peer"
+                  className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[16px] py-4 focus:outline-none focus:border-brand-primary transition-colors appearance-none peer"
                   id="service"
                 >
-                  <option value="" className="bg-[#111111] text-white">Select operational bottleneck...</option>
-                  {services.map(s => <option key={s} value={s} className="bg-[#111111] text-white">{s}</option>)}
+                  <option value="" className="bg-white text-[#0C2D57]">Select operational bottleneck...</option>
+                  {services.map(s => <option key={s} value={s} className="bg-white text-[#0C2D57]">{s}</option>)}
                 </select>
                 <label htmlFor="service" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-brand-primary transition-all">Priority Area</label>
-                {errors.service && <p className="text-red-400 text-xs mt-2 absolute">{errors.service.message}</p>}
+                {errors.service && <p className="text-red-500 text-xs mt-2 absolute">{errors.service.message}</p>}
               </div>
 
               <div className="relative pt-6">
                 <textarea 
                   {...register("message")}
                   rows={4}
-                  className="w-full bg-transparent border-b border-white/20 text-white text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors resize-none peer placeholder-transparent"
+                  className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors resize-none peer placeholder-transparent"
                   placeholder="Details"
                   id="message"
                 />
-                <label htmlFor="message" className="absolute left-0 top-0 text-[10px] font-bold uppercase tracking-widest text-white/50 transition-all peer-placeholder-shown:text-white/30 peer-placeholder-shown:top-6 peer-placeholder-shown:text-[16px] peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-brand-primary">Operational Details *</label>
-                {errors.message && <p className="text-red-400 text-xs mt-2 absolute">{errors.message.message}</p>}
+                <label htmlFor="message" className="absolute left-0 top-0 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-6 peer-placeholder-shown:text-[16px] peer-focus:top-0 peer-focus:text-[10px] peer-focus:text-brand-primary">Operational Details *</label>
+                {errors.message && <p className="text-red-500 text-xs mt-2 absolute">{errors.message.message}</p>}
               </div>
 
               <div className="pt-8">
                 <button 
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative w-full overflow-hidden bg-brand-primary text-white font-bold text-[14px] uppercase tracking-[0.2em] py-6 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group relative w-full overflow-hidden bg-brand-primary text-white font-bold text-[14px] uppercase tracking-[0.2em] py-6 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brand-primary/20"
                 >
-                  <div className="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full" />
-                  <span className="relative z-10 group-hover:text-black transition-colors duration-500">
+                  <div className="absolute inset-0 w-0 bg-brand-secondary transition-all duration-500 ease-out group-hover:w-full" />
+                  <span className="relative z-10 group-hover:text-white transition-colors duration-500">
                     {isSubmitting ? "TRANSMITTING..." : "SUBMIT INQUIRY"}
                   </span>
                 </button>

@@ -55,8 +55,8 @@ const config: Config = {
         brand: {
           primary: "#0EA5E9", // sky blue
           secondary: "#1D4ED8", // strong blue
-          dark: "#020617", // slate-950
-          surface: "#0F172A", // slate-900
+          dark: "#0C2D57", // deep navy blue
+          surface: "#E8F4FD", // light blue surface
           text: "#F8FAFC", // white
           accent: "#38BDF8", // sky-400
         }

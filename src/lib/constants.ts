@@ -2,7 +2,7 @@
 
 export const siteConfig = {
   name: 'AdvaitAI',
-  description: 'AdvaitAI provides Artificial Aligned Intelligence. A powerful framework for building and managing workflows through parsing, modeling, and automated assurance with flexible deployment architectures.',
+  description: 'AdvaitAI provides AI Automation Solutions to businesses. We deliver intelligent automation, workflow optimization, and scalable AI systems through parsing, modeling, and automated assurance with flexible deployment architectures.',
   url: 'https://advaitai.in',
   ogImage: 'https://advaitai.in/og.jpg',
   keywords: [

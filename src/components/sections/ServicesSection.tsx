@@ -37,7 +37,7 @@ export default function ServicesSection() {
   const containerRef = useRef(null);
 
   return (
-    <section id="what-we-do" className="bg-[#0A0A0A] text-white w-full border-t border-white/10 relative" ref={containerRef}>
+    <section id="what-we-do" className="bg-white text-[#0C2D57] w-full border-t border-[#DBEAFE] relative" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12 py-32">
         
         <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 relative">
@@ -57,16 +57,16 @@ export default function ServicesSection() {
                   OUR PLATFORM
                 </div>
                 <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-                  A powerful <br /> framework
+                  AI Automation <br /> That Delivers
                 </h2>
-                <p className="text-[18px] md:text-[20px] font-light text-white/50 leading-[1.6] mb-10 max-w-sm">
-                  For building and managing advanced workflows.
+                <p className="text-[18px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6] mb-10 max-w-sm">
+                  Tailored solutions to automate, optimize, and scale your business operations.
                 </p>
                 <Link 
                   href="/capabilities" 
-                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group"
+                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group text-[#0C2D57]"
                 >
-                  View full stack
+                  Explore Our Solutions
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
                 </Link>
               </motion.div>
@@ -82,7 +82,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ margin: "-10%" }}
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-                className="sticky top-40 bg-[#111111] overflow-hidden border border-white/10 group cursor-pointer"
+                className="sticky top-40 bg-[#0C2D57] overflow-hidden border border-[#1D4ED8]/20 group cursor-pointer"
                 style={{ zIndex: index, height: '500px' }}
               >
                 <Link href={`/capabilities/${cap.slug}`} className="block w-full h-full relative">
@@ -90,7 +90,7 @@ export default function ServicesSection() {
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110 opacity-40 group-hover:opacity-80 mix-blend-luminosity"
                     style={{ backgroundImage: `url('${cap.image}')` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent transition-opacity duration-700 opacity-90 group-hover:opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C2D57] via-[#0C2D57]/40 to-transparent transition-opacity duration-700 opacity-90 group-hover:opacity-60" />
                   
                   <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end z-10">
                     <div className="transform translate-y-0 lg:translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
