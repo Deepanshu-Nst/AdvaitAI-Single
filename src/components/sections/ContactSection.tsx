@@ -35,19 +35,36 @@ export default function ContactSection() {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "dummy";
       
-      if (!response.ok) throw new Error("Failed to send");
-      
-      toast.success("Message sent! We'll be in touch within 24 hours.");
-      reset();
+      if (accessKey !== "dummy") {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: "New Contact Form Submission - AdvaitAI",
+            ...data
+          })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+          toast.success("Message sent! We'll be in touch within 24 hours.");
+          reset();
+        } else {
+          throw new Error(result.message || "Failed to send");
+        }
+      } else {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        toast.success("Message handled locally. We will be in touch!");
+        reset();
+      }
     } catch {
-      toast.success("Message handled locally. We will be in touch!");
-      reset();
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -74,34 +91,22 @@ export default function ContactSection() {
               INITIATE CONTACT
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold text-[#0C2D57] mb-8 leading-[1.05] tracking-tight">
-              Tell us your problem. <br/>
-              <span className="text-[#5B7FA5]">We&apos;ll tell you if AI can fix it.</span>
+              Book a Demo <br/>
+              <span className="text-[#5B7FA5]">and transform your workflow.</span>
             </h2>
             <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] mb-16 leading-relaxed">
-              We don&apos;t waste time on endless discovery. Drop the details. We&apos;ll give you a straight answer on feasibility, timeline, and ROI.
+              We don&apos;t waste time on endless discovery. Schedule a demo and we&apos;ll give you a straight answer on feasibility, timeline, and ROI for your automation needs.
             </p>
 
-            <div className="space-y-12">
               <div className="flex items-center gap-6 group">
                 <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
                   <Mail className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Direct Line</h4>
-                  <a href="mailto:hello@advaitai.in" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">hello@advaitai.in</a>
+                  <a href="mailto:contact@advaita1.com" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">contact@advaita1.com</a>
                 </div>
               </div>
-
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
-                  <Phone className="w-5 h-5 text-brand-primary" />
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Global Office</h4>
-                  <a href="tel:+919876543210" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">+91 98765 43210</a>
-                </div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right - Floating Clean Form */}

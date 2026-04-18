@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    console.log("Contact Request Received:", body);
+    console.log("Newsletter Subscription Request Received:", body);
 
     const web3formsAccessKey = process.env.WEB3FORMS_ACCESS_KEY || "dummy";
     
@@ -16,25 +16,25 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           access_key: web3formsAccessKey,
-          subject: "New Contact Form Submission - AdvaitAI",
+          subject: "New Newsletter Subscriber - AdvaitAI",
           ...body
         }),
       });
       
       const result = await response.json();
       if (result.success) {
-        return NextResponse.json({ success: true, message: "Email sent successfully" });
+        return NextResponse.json({ success: true, message: "Subscribed successfully" });
       } else {
-        throw new Error(result.message || 'Failed to send email via Web3Forms');
+        throw new Error(result.message || 'Failed to subscribe via Web3Forms');
       }
     } else {
       // Simulate if no key
-      console.log("Sending simulated email since WEB3FORMS_ACCESS_KEY is not set in env variables.");
+      console.log("Simulating newsletter subscription since WEB3FORMS_ACCESS_KEY is not set.");
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      return NextResponse.json({ success: true, message: "Email simulated successfully" });
+      return NextResponse.json({ success: true, message: "Subscription simulated successfully" });
     }
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ error: 'Failed to process request' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to process newsletter subscription' }, { status: 500 });
   }
 }

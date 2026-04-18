@@ -6,27 +6,47 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[100svh] bg-[#F0F7FF] overflow-hidden flex flex-col justify-end pb-24 pt-32">
-      {/* Background Image with Blue Gradient Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-15 scale-105 transform origin-bottom transition-transform duration-[20s] ease-out hover:scale-110"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop')" }}
+    <section className="relative w-full min-h-[100svh] bg-[#F0F7FF] overflow-hidden flex items-center pt-28">
+      {/* Background */}
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              90deg,
+              rgba(240,247,255,0.82) 0%,
+              rgba(240,247,255,0.72) 22%,
+              rgba(240,247,255,0.52) 42%,
+              rgba(240,247,255,0.22) 65%,
+              rgba(240,247,255,0.00) 100%
+            ),
+            radial-gradient(
+              circle at 22% 48%,
+              rgba(255,255,255,0.35) 0%,
+              rgba(255,255,255,0.18) 18%,
+              rgba(255,255,255,0.00) 52%
+            ),
+            url('https://i.pinimg.com/736x/c0/d9/cd/c0d9cdeac964146b3857cb0abbe229f7.jpg')
+          `,
+          backgroundSize: "115% auto",
+          backgroundPosition: "right center",
+          backgroundRepeat: "no-repeat",
+          filter: "contrast(1.3) saturate(1.25) brightness(1.05)"
+        }}
       />
+
       <div className="absolute inset-0 bg-gradient-to-t from-[#F0F7FF] via-[#F0F7FF]/90 to-[#E0EFFF]/60 z-10" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-20 flex flex-col justify-end h-full flex-grow mt-12 text-center md:text-left">
-        
-        {/* Main Content Area */}
-        <div className="max-w-[1000px] w-full mx-auto md:mx-0">
+      {/* Content */}
+      <div className="container mx-auto px-6 md:px-12 relative z-20 w-full">
+        <div className="max-w-[1000px] w-full text-center md:text-left -mt-12 md:-mt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-[64px] md:text-[80px] lg:text-[110px] font-bold tracking-tighter leading-[0.9] text-[#0C2D57]">
-              <span className="text-[20px] md:text-[24px] uppercase tracking-widest text-brand-primary block mb-6 font-normal">Our mission</span>
-              Artificial <br />
+            <h1 className="text-[52px] md:text-[64px] lg:text-[76px] font-bold tracking-tight leading-[1.05] text-[#0C2D57] drop-shadow-sm mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-[#1D4ED8]">
                 Aligned Intelligence.
               </span>
@@ -39,9 +59,11 @@ export default function HeroSection() {
             transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
             className="text-[18px] md:text-[24px] font-light text-[#3B5B8A] max-w-[700px] mx-auto md:mx-0 leading-[1.6]"
           >
-            High-precision logical intelligence enforces structured reasoning with minimal variance under complex conditions. It enables stable, reproducible inference across layered and interdependent systems.
+            High-precision logical intelligence enforces structured reasoning
+            with minimal variance under complex conditions. It enables stable,
+            reproducible inference across layered and interdependent systems.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,14 +72,13 @@ export default function HeroSection() {
           >
             <Link
               href="/#contact"
-              className="bg-brand-primary text-white px-8 py-4 text-[13px] font-bold uppercase tracking-[0.15em] hover:bg-brand-secondary hover:text-white transition-colors duration-500 inline-flex items-center gap-4 group shadow-lg shadow-brand-primary/20"
+              className="bg-brand-primary text-white px-8 py-4 text-[13px] font-bold uppercase tracking-[0.15em] hover:bg-brand-secondary transition-colors duration-500 inline-flex items-center gap-4 group shadow-lg shadow-brand-primary/20"
             >
-              Get Your AI Automation Blueprint 
+              Get Your AI Automation Blueprint
               <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" />
             </Link>
           </motion.div>
         </div>
-
       </div>
     </section>
   );

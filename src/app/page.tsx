@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import ServicesSection from "@/components/sections/ServicesSection";
 import UseCasesSection from "@/components/sections/UseCasesSection";
-import WhyUsSection from "@/components/sections/WhyUsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import BlogSection from "@/components/sections/BlogSection";
 
@@ -14,7 +13,6 @@ export default function Home() {
       <ServicesSection />
       <UseCasesSection />
       <BlogSection />
-      <WhyUsSection />
       <ContactSection />
     </div>
   );

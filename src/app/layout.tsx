@@ -7,6 +7,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CookieConsent from "@/components/ui/CookieConsent";
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
@@ -86,6 +87,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
         </SmoothScroll>
+        <CookieConsent />
         <Toaster position="bottom-right" />
         <Analytics />
       </body>

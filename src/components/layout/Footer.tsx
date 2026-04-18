@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import ParticleNetwork from "@/components/ui/ParticleNetwork";
+import { toast } from "sonner";
 
 export default function Footer() {
   return (
@@ -8,23 +11,79 @@ export default function Footer() {
       <div className="container mx-auto px-6 md:px-12 relative z-10 pointer-events-none">
         <div className="flex flex-col lg:flex-row justify-between gap-16 mb-24 border-b border-white/15 pb-20 pointer-events-auto">
           <div className="w-full lg:w-1/2">
-            <h3 className="text-[32px] md:text-[44px] font-light leading-[1.1] mb-6">Build the future.<br/>Without the bloat.</h3>
-            <p className="text-white/60 text-[16px] max-w-md">
-              AdvaitAI builds practical AI solutions for modern startups and forward-thinking enterprises.
+            <h3 className="text-[28px] md:text-[36px] font-light leading-[1.1] mb-6">Subscribe to our newsletter</h3>
+            <p className="text-white/60 text-[16px] max-w-md mb-8">
+              Stay ahead of the curve with the latest in enterprise AI automation and deployments.
             </p>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                const email = formData.get('email');
+                if (email) {
+                  try {
+                    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "dummy";
+                    
+                    if (accessKey !== "dummy") {
+                      const response = await fetch("https://api.web3forms.com/submit", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json",
+                        },
+                        body: JSON.stringify({
+                          access_key: accessKey,
+                          subject: "New Newsletter Subscriber - AdvaitAI",
+                          email
+                        }),
+                      });
+                      
+                      const result = await response.json();
+                      if (result.success) {
+                        toast.success("Thanks for subscribing!");
+                        (e.target as HTMLFormElement).reset();
+                      } else {
+                        throw new Error(result.message || "Subscription failed");
+                      }
+                    } else {
+                      await new Promise(r => setTimeout(r, 1000));
+                      toast.success("Thanks for subscribing! (Simulated)");
+                      (e.target as HTMLFormElement).reset();
+                    }
+                  } catch (err) {
+                    toast.error("Subscription failed. Please try again.");
+                  }
+                }
+              }}
+              className="flex items-center w-full max-w-md"
+            >
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                className="flex-grow bg-white/5 border border-white/20 text-white placeholder-white/40 px-4 py-3 h-[48px] focus:outline-none focus:border-brand-primary transition-colors text-[14px]"
+              />
+              <button
+                type="submit"
+                className="bg-brand-primary text-white px-6 py-3 h-[48px] text-[12px] font-bold uppercase tracking-widest hover:bg-brand-secondary transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
 
           <div className="w-full lg:w-[40%] flex flex-col items-start lg:items-end text-left lg:text-right">
-             <Link href="/" className="mb-8 block">
-               <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Link href="/" className="mb-8 block">
+              <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="48" stroke="white" strokeWidth="2" />
                 <path d="M40 70 L50 30 L60 70" stroke="white" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M43 60 L57 60" stroke="white" strokeWidth="8" strokeLinecap="round" />
               </svg>
             </Link>
-            <h4 className="text-[20px] font-light mb-2">AdvaitAI Technologies</h4>
-             <p className="text-white/60 text-[15px] max-w-xs mb-8">
-              hello@advaitai.in
+            <h4 className="text-[20px] font-light mb-2">AdvaitAI</h4>
+            <p className="text-white/60 text-[15px] max-w-xs mb-8">
+              contact@advaita1.com
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-white hover:text-brand-accent transition-colors">
@@ -51,7 +110,7 @@ export default function Footer() {
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
           <div className="text-[14px] text-white/60">
-            © {new Date().getFullYear()} AdvaitAI. All rights reserved.
+            © {new Date().getFullYear()} ADVAITIANS INNOVATIONS PRIVATE LIMITED. All rights reserved.
           </div>
         </div>
       </div>
