@@ -74,14 +74,13 @@ export default function Footer() {
           </div>
 
           <div className="w-full lg:w-[40%] flex flex-col items-start lg:items-end text-left lg:text-right">
-            <Link href="/" className="mb-8 block">
+            <Link href="/" className="mb-8 block bg-white/90 p-3 rounded-lg backdrop-blur-sm shadow-sm hover:shadow-md transition-shadow">
               <img
-                src="https://media.licdn.com/dms/image/v2/D4E0BAQE0ZgxpSahb3Q/company-logo_200_200/B4EZh_uIpXHIAI-/0/1754489458621?e=1778112000&v=beta&t=VCry-e_tzvu6-_kpN0SqQhP69wsxyY63pgpS2HLv0iM"
+                src="https://i.ibb.co/LXRNGDVK/Advait-AI-logo-trans-removebg-preview.png"
                 alt="AdvaitAI Logo"
-                className="w-[48px] h-[48px] object-contain rounded"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </Link>
-            <h4 className="text-[20px] font-light mb-2">AdvaitAI</h4>
             <p className="text-white/60 text-[15px] max-w-xs mb-8">
               contact@advaita1.com
             </p>
