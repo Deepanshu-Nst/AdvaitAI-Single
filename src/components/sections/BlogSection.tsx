@@ -6,26 +6,26 @@ import ParticleNetwork from "@/components/ui/ParticleNetwork";
 
 const insights = [
   {
-    title: "What is SAFE AI?",
-    desc: "Understanding the core principles of building secure, reliable, and aligned artificial intelligence systems.",
+    title: "Architecting Safe AI for the Enterprise",
+    desc: "A comprehensive exploration of the core principles required to engineer secure, reliable, and fundamentally aligned artificial intelligence systems within complex corporate environments. This analysis delves into risk mitigation, robust model governance, and the imperative of ethical deployment at scale.",
     image: "https://media.istockphoto.com/id/2220270119/photo/responsible-ai-concept-with-ethical-principles-transparency-and-social-impact-in-technology.webp?a=1&b=1&s=612x612&w=0&k=20&c=c8I2sFg3aU0wICym7IKJk53pu8s9ujNwVummIeLL7a8=",
     colSpan: "md:col-span-2",
   },
   {
-    title: "Data protection and privacy compliance",
-    desc: "What GDPR, DPDP, and the broader regulatory shift mean for system builders and large scale models.",
+    title: "Navigating the New Privacy Paradigm",
+    desc: "An in-depth examination of how emerging regulatory frameworks, including GDPR, DPDP, and upcoming AI-specific legislation, are reshaping the landscape for system architects. Learn strategies for building compliance-first data pipelines and ensuring uncompromised data sovereignty in large-scale model deployments.",
     image: "https://plus.unsplash.com/premium_photo-1676618539992-21c7d3b6df0f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGF0YSUyMHByb3RlY3Rpb258ZW58MHx8MHx8fDA%3D",
     colSpan: "md:col-span-1",
   },
   {
-    title: "Toward Trustworthy AI Systems",
-    desc: "The engineering challenge of creating stable, reproducible AI inference across interdependent infrastructures.",
+    title: "Engineering Trustworthy Inference",
+    desc: "Addressing the paramount technical challenge of developing stable, reproducible AI inference mechanisms across highly interdependent computing infrastructures. We dissect the methodologies for ensuring deterministic outcomes, maintaining algorithmic transparency, and fortifying system resilience against adversarial perturbations.",
     image: "https://media.istockphoto.com/id/1946360023/photo/responsible-artificial-intelligence-responsibility-governance-ethical-environmental-practice.webp?a=1&b=1&s=612x612&w=0&k=20&c=ewbPcdwzQl8_ihrOgZpGCJPv3rfscLI2wxNIhQz-PcI=",
     colSpan: "md:col-span-1",
   },
   {
-    title: "The New Economics of Compute",
-    desc: "Scaling inference efficiently without expanding architectural bloat or escalating cloud usage parameters.",
+    title: "The Economics of Optimized Compute",
+    desc: "Strategic insights into scaling AI inference with maximum resource efficiency. We provide a rigorous framework for managing computational overhead, avoiding architectural bloat, and optimizing cloud utilization parameters to achieve superior performance metrics without escalating operational expenditures.",
     image: "https://plus.unsplash.com/premium_photo-1663931932651-ea743c9a0144?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8VGhlJTIwbmV3JTIwZWNvbm9taWNzJTIwb2YlMjBjb21wdXRlfGVufDB8fDB8fHww",
     colSpan: "md:col-span-2",
   }
@@ -49,7 +49,7 @@ export default function BlogSection() {
               Insights
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-              Stay ahead of the curve.
+              Leading industry insights.
             </h2>
           </motion.div>
         </div>
@@ -75,14 +75,14 @@ export default function BlogSection() {
 
               <div className="absolute inset-0 p-8 flex flex-col justify-end transition-transform duration-500 transform group-hover:-translate-y-4 z-20 pointer-events-none">
                 <h3 className="text-[24px] md:text-[32px] font-bold text-white mb-2 leading-[1.2] drop-shadow-md group-hover:drop-shadow-none transition-all duration-300 group-hover:mb-4">{post.title}</h3>
-                <p className="text-[15px] font-medium text-white/90 leading-[1.6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">{post.desc}</p>
+                <p className="text-[14px] font-medium text-white/90 leading-[1.6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">{post.desc}</p>
               </div>
 
               <div className="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center bg-white/10 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0 z-20 group-hover:bg-white group-hover:text-brand-primary">
                 <ArrowRight className="w-5 h-5" />
               </div>
 
-              <a href="#" className="absolute inset-0 z-30"><span className="sr-only">Read {post.title}</span></a>
+              <div className="absolute inset-0 z-30 cursor-default"><span className="sr-only">Read {post.title}</span></div>
             </motion.div>
           ))}
         </div>

@@ -22,7 +22,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const services = [
   "AI System Architecture", "LLM Integration", "Data Pipeline Automation", 
-  "Risk & Compliance AI", "Supply Chain Analytics", "Something Else"
+  "Risk & Compliance AI", "Supply Chain Analytics"
 ];
 
 export default function ContactSection() {
@@ -91,11 +91,11 @@ export default function ContactSection() {
               INITIATE CONTACT
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold text-[#0C2D57] mb-8 leading-[1.05] tracking-tight">
-              Book a Demo <br/>
-              <span className="text-[#5B7FA5]">and transform your workflow.</span>
+              Request a Consultation <br/>
+              <span className="text-[#5B7FA5]">to architect your future.</span>
             </h2>
             <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] mb-16 leading-relaxed">
-              We don&apos;t waste time on endless discovery. Schedule a demo and we&apos;ll give you a straight answer on feasibility, timeline, and ROI for your automation needs.
+              We prioritize precision and actionable insights. Schedule a consultation directly with our experts to receive a rigorous assessment of feasibility, implementation timelines, and projected ROI for your automation initiatives.
             </p>
 
               <div className="flex items-center gap-6 group">

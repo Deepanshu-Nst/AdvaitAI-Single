@@ -19,7 +19,7 @@ const useCases = [
   {
     title: "Corporate Training",
     desc: "Transforms compliance and onboarding materials into interactive scenario-based operational evaluations.",
-    image: "https://i.pinimg.com/1200x/9f/ff/57/9fff570c833e6e328ef6eb6719fdc2b9.jpg"
+    image: "https://images.unsplash.com/photo-1558008258-3256797b43f3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fENvcnBvcmF0ZSUyMHRyYWluaW5nfGVufDB8fDB8fHww"
   },
   {
     title: "Business Process Automation",
@@ -86,7 +86,7 @@ export default function UseCasesSection() {
               INDUSTRY SOLUTIONS
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
-              Use Cases
+              Case Studies
             </h2>
             <p className="text-[18px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6]">
               Transforming workflows with deterministic AI automation solutions tailored for complex, multi-layered industries.

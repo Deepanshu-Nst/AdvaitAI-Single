@@ -68,13 +68,12 @@ export default function ServicesSection() {
                 <p className="text-[18px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6] mb-10 max-w-sm">
                   We architect deterministic AI systems that transcend proof-of-concepts, securely automating mission-critical workflows across diverse operational environments.
                 </p>
-                <Link
-                  href="/capabilities"
-                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group text-[#0C2D57]"
+                <div
+                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group text-[#0C2D57] cursor-pointer"
                 >
                   Explore Our Solutions
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
-                </Link>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -91,7 +90,7 @@ export default function ServicesSection() {
                 className="sticky top-40 bg-[#0C2D57] overflow-hidden border border-[#1D4ED8]/20 group cursor-pointer"
                 style={{ zIndex: index, height: '500px' }}
               >
-                <Link href={`/capabilities/${cap.slug}`} className="block w-full h-full relative">
+                <div className="block w-full h-full relative">
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110 opacity-40 group-hover:opacity-80 mix-blend-luminosity"
                     style={{ backgroundImage: `url('${cap.image}')` }}
@@ -111,7 +110,7 @@ export default function ServicesSection() {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>
