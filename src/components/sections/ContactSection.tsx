@@ -21,7 +21,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const services = [
-  "AI System Architecture", "LLM Integration", "Data Pipeline Automation", 
+  "AI System Architecture", "LLM Integration", "Data Pipeline Automation",
   "Risk & Compliance AI", "Supply Chain Analytics"
 ];
 
@@ -36,7 +36,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
     try {
       const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "dummy";
-      
+
       if (accessKey !== "dummy") {
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
@@ -50,7 +50,7 @@ export default function ContactSection() {
             ...data
           })
         });
-        
+
         const result = await response.json();
         if (result.success) {
           toast.success("Message sent! We'll be in touch within 24 hours.");
@@ -78,9 +78,9 @@ export default function ContactSection() {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-20 lg:gap-32 items-start">
-          
+
           {/* Left - Info */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -91,26 +91,26 @@ export default function ContactSection() {
               INITIATE CONTACT
             </div>
             <h2 className="text-[48px] md:text-[64px] font-bold text-[#0C2D57] mb-8 leading-[1.05] tracking-tight">
-              Request a Consultation <br/>
+              Book a Consultation <br />
               <span className="text-[#5B7FA5]">to architect your future.</span>
             </h2>
             <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] mb-16 leading-relaxed">
               We prioritize precision and actionable insights. Schedule a consultation directly with our experts to receive a rigorous assessment of feasibility, implementation timelines, and projected ROI for your automation initiatives.
             </p>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
-                  <Mail className="w-5 h-5 text-brand-primary" />
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Direct Line</h4>
-                  <a href="mailto:contact@advaita1.com" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">contact@advaita1.com</a>
-                </div>
+            <div className="flex items-center gap-6 group">
+              <div className="w-14 h-14 border border-[#BFDBFE] bg-[#F0F7FF] rounded-full flex items-center justify-center shrink-0 group-hover:border-brand-primary transition-all duration-500">
+                <Mail className="w-5 h-5 text-brand-primary" />
               </div>
+              <div>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Direct Line</h4>
+                <a href="mailto:contact@advaita1.com" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">contact@advaita1.com</a>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right - Floating Clean Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -118,10 +118,10 @@ export default function ContactSection() {
             className="w-full lg:w-[60%]"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-12 max-w-2xl mx-auto lg:mr-0 pt-4">
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="relative group">
-                  <input 
+                  <input
                     {...register("fullName")}
                     className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Full Name"
@@ -131,7 +131,7 @@ export default function ContactSection() {
                   {errors.fullName && <p className="text-red-500 text-xs mt-2 absolute">{errors.fullName.message}</p>}
                 </div>
                 <div className="relative group">
-                  <input 
+                  <input
                     {...register("email")}
                     className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Work Email"
@@ -144,7 +144,7 @@ export default function ContactSection() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="relative group">
-                  <input 
+                  <input
                     {...register("company")}
                     className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Company"
@@ -153,7 +153,7 @@ export default function ContactSection() {
                   <label htmlFor="company" className="absolute left-0 -top-3 text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] transition-all peer-placeholder-shown:text-[#94B4D4] peer-placeholder-shown:top-4 peer-placeholder-shown:text-[16px] peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-brand-primary">Company Name</label>
                 </div>
                 <div className="relative group">
-                  <input 
+                  <input
                     {...register("phone")}
                     className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors peer placeholder-transparent"
                     placeholder="Phone"
@@ -164,7 +164,7 @@ export default function ContactSection() {
               </div>
 
               <div className="relative">
-                <select 
+                <select
                   {...register("service")}
                   className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[16px] py-4 focus:outline-none focus:border-brand-primary transition-colors appearance-none peer"
                   id="service"
@@ -177,7 +177,7 @@ export default function ContactSection() {
               </div>
 
               <div className="relative pt-6">
-                <textarea 
+                <textarea
                   {...register("message")}
                   rows={4}
                   className="w-full bg-transparent border-b border-[#BFDBFE] text-[#0C2D57] text-[18px] py-4 focus:outline-none focus:border-brand-primary transition-colors resize-none peer placeholder-transparent"
@@ -189,7 +189,7 @@ export default function ContactSection() {
               </div>
 
               <div className="pt-8">
-                <button 
+                <button
                   type="submit"
                   disabled={isSubmitting}
                   className="group relative w-full overflow-hidden bg-brand-primary text-white font-bold text-[14px] uppercase tracking-[0.2em] py-6 transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brand-primary/20"
