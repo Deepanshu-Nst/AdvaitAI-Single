@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "AdvaitAI — Artificial Aligned Intelligence",
+    default: "AdvaitAI",
     template: "%s | AdvaitAI",
   },
   description: siteConfig.description,
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/ico.png",
+    shortcut: "/ico.png",
+    apple: "/ico.png",
   },
   manifest: "/manifest.json",
 };
