@@ -38,11 +38,11 @@ export default function Navbar() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between h-full w-full">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center group relative z-50 shrink-0">
+          <Link href="/" className="flex items-center group relative z-50 shrink-0 transform origin-left hover:scale-105 transition-transform duration-300">
             <img
               src="https://i.ibb.co/LXRNGDVK/Advait-AI-logo-trans-removebg-preview.png"
               alt="AdvaitAI Logo"
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-[72px] md:h-[90px] w-auto object-contain drop-shadow-md"
             />
           </Link>
 

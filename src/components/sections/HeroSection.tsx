@@ -46,7 +46,7 @@ export default function HeroSection() {
             transition={{ duration: 1.5, ease: [0.19, 1, 0.22, 1], delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-[52px] md:text-[64px] lg:text-[76px] font-bold tracking-tight leading-[1.05] text-[#0C2D57] drop-shadow-sm mb-4">
+            <h1 className="text-[40px] md:text-[52px] lg:text-[60px] font-bold tracking-tight leading-[1.1] text-[#0C2D57] drop-shadow-sm mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-[#1D4ED8]">
                 Aligned Intelligence.
               </span>
