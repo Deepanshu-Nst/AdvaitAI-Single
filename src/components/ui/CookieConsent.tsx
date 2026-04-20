@@ -7,10 +7,8 @@ export default function CookieConsent() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
-    if (!consent) {
-      setTimeout(() => setShow(true), 1500);
-    }
+    // Show the consent banner on every refresh after a short delay
+    setTimeout(() => setShow(true), 1500);
   }, []);
 
   const handleConsent = (status: "accepted" | "declined") => {
