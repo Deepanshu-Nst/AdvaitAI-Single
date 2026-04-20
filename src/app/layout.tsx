@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/constants";
-import { Analytics } from "@vercel/analytics/react";
+import AnalyticsWrapper from "@/components/ui/AnalyticsWrapper";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import Navbar from "@/components/layout/Navbar";
@@ -89,7 +89,7 @@ export default function RootLayout({
         </SmoothScroll>
         <CookieConsent />
         <Toaster position="bottom-right" />
-        <Analytics />
+        <AnalyticsWrapper />
       </body>
     </html>
   );

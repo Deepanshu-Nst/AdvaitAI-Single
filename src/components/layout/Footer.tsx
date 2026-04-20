@@ -96,7 +96,12 @@ export default function Footer() {
           <div className="text-[14px] text-white/60 flex flex-col md:flex-row gap-4 md:gap-8">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-            <Link href="/cookies" className="hover:text-white transition-colors">Cookie Preferences</Link>
+            <button 
+              onClick={() => window.dispatchEvent(new Event("openCookieSettings"))}
+              className="hover:text-white transition-colors text-left"
+            >
+              Cookie Preferences
+            </button>
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
           <div className="text-[14px] text-white/60">
