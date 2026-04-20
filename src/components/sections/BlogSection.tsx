@@ -33,9 +33,9 @@ const insights = [
 
 export default function BlogSection() {
   return (
-    <section id="insights" className="relative bg-white text-[#0C2D57] py-32 border-t border-[#DBEAFE] overflow-hidden">
+    <section id="insights" className="relative bg-white text-[#0C2D57] py-16 md:py-32 border-t border-[#DBEAFE] overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col mb-16 relative">
+        <div className="flex flex-col mb-12 md:mb-16 relative">
           <ParticleNetwork idClassName="insights-particles" opacity={0.3} />
 
           <motion.div
@@ -45,17 +45,17 @@ export default function BlogSection() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-2/3 pointer-events-none relative z-10"
           >
-            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8 inline-block border-b border-brand-primary/30 pb-2">
               Insights
             </div>
-            <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
+            <h2 className="text-[36px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-6 md:mb-8">
               Leading industry insights.
             </h2>
           </motion.div>
         </div>
 
         {/* Wow-factor Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[320px] sm:auto-rows-[400px]">
           {insights.map((post, index) => (
             <motion.div
               key={`${post.title}-${index}`}

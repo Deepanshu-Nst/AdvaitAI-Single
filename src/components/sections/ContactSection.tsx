@@ -71,13 +71,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden" id="contact">
+    <section className="py-16 md:py-32 bg-white relative overflow-hidden" id="contact">
       <ParticleNetwork idClassName="contact-particles" opacity={0.3} />
       {/* Abstract floating blur */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none transform translate-x-1/3 -translate-y-1/3" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20 lg:gap-32 items-start">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 items-start">
 
           {/* Left - Info */}
           <motion.div
@@ -87,14 +87,14 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-[40%] lg:sticky lg:top-32"
           >
-            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8 inline-block border-b border-brand-primary/30 pb-2">
               INITIATE CONTACT
             </div>
-            <h2 className="text-[48px] md:text-[64px] font-bold text-[#0C2D57] mb-8 leading-[1.05] tracking-tight">
+            <h2 className="text-[36px] md:text-[64px] font-bold text-[#0C2D57] mb-6 md:mb-8 leading-[1.05] tracking-tight">
               Book a Consultation <br />
               <span className="text-[#5B7FA5]">to architect your future.</span>
             </h2>
-            <p className="text-[18px] md:text-[22px] font-light text-[#5B7FA5] mb-16 leading-relaxed">
+            <p className="text-[17px] md:text-[22px] font-light text-[#5B7FA5] mb-8 md:mb-16 leading-relaxed">
               We prioritize precision and actionable insights. Schedule a consultation directly with our experts to receive a rigorous assessment of feasibility, implementation timelines, and projected ROI for your automation initiatives.
             </p>
 
@@ -104,7 +104,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#5B7FA5] mb-1">Direct Line</h4>
-                <a href="mailto:contact@advaita1.com" className="text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">contact@advaita1.com</a>
+                <a href="mailto:contact@advaita1.com" className="text-[17px] md:text-[18px] text-[#0C2D57] hover:text-brand-primary transition-colors">contact@advaita1.com</a>
               </div>
             </div>
           </motion.div>
@@ -117,6 +117,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-[60%]"
           >
+
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-12 max-w-2xl mx-auto lg:mr-0 pt-4">
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

@@ -42,7 +42,7 @@ export default function Navbar() {
             <img
               src="https://i.ibb.co/LXRNGDVK/Advait-AI-logo-trans-removebg-preview.png"
               alt="AdvaitAI Logo"
-              className="h-[72px] md:h-[90px] w-auto object-contain drop-shadow-md"
+              className="h-[56px] md:h-[90px] w-auto object-contain drop-shadow-md"
             />
           </Link>
 
@@ -72,10 +72,10 @@ export default function Navbar() {
             </Link>
 
             <button
-              className="lg:hidden p-2 -mr-2 text-[#0C2D57] transition-transform active:scale-95 z-50"
+              className="lg:hidden p-1 -mr-1 text-[#0C2D57] transition-transform active:scale-95 z-50"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="w-8 h-8" strokeWidth={1.5} /> : <Menu className="w-8 h-8" strokeWidth={1.5} />}
+              {mobileMenuOpen ? <X className="w-7 h-7" strokeWidth={1.5} /> : <Menu className="w-7 h-7" strokeWidth={1.5} />}
             </button>
           </div>
         </div>
@@ -89,7 +89,10 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[80px] bg-white border-b border-[#DBEAFE] shadow-xl z-40 lg:hidden"
+            className={cn(
+              "fixed inset-x-0 bg-white border-b border-[#DBEAFE] shadow-xl z-40 lg:hidden transition-all duration-500",
+              scrolled ? "top-[80px]" : "top-[100px]"
+            )}
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {links.map((link) => (

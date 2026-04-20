@@ -44,12 +44,12 @@ export default function ServicesSection() {
 
   return (
     <section id="what-we-do" className="bg-white text-[#0C2D57] w-full border-t border-[#DBEAFE] relative" ref={containerRef}>
-      <div className="container mx-auto px-6 md:px-12 py-32">
+      <div className="container mx-auto px-6 md:px-12 py-16 md:py-32">
 
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24 relative">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 relative">
 
           {/* Left Column: Sticky Heading */}
-          <div className="w-full lg:w-[40%] relative mt-6 hover:cursor-grab">
+          <div className="w-full lg:w-[40%] relative mt-6">
             <div className="lg:sticky lg:top-40 relative">
               <ParticleNetwork idClassName="services-particles" opacity={0.3} />
               <motion.div
@@ -59,17 +59,17 @@ export default function ServicesSection() {
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
                 className="relative z-10 pointer-events-none"
               >
-                <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+                <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8 inline-block border-b border-brand-primary/30 pb-2">
                   CAPABILITIES
                 </div>
-                <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
+                <h2 className="text-[36px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-6 md:mb-8">
                   Why Us
                 </h2>
-                <p className="text-[18px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6] mb-10 max-w-sm">
+                <p className="text-[17px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6] mb-8 md:mb-10 max-w-sm">
                   We architect deterministic AI systems that transcend proof-of-concepts, securely automating mission-critical workflows across diverse operational environments.
                 </p>
                 <div
-                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group text-[#0C2D57] cursor-pointer"
+                  className="inline-flex items-center gap-3 text-[14px] font-bold uppercase tracking-widest hover:text-brand-primary transition-colors group text-[#0C2D57] cursor-pointer pointer-events-auto"
                 >
                   Explore Our Solutions
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
@@ -79,7 +79,7 @@ export default function ServicesSection() {
           </div>
 
           {/* Right Column: Stacking Cinematic Cards */}
-          <div className="w-full lg:w-[60%] flex flex-col gap-[10vh] pb-[10vh]">
+          <div className="w-full lg:w-[60%] flex flex-col gap-[5vh] lg:gap-[10vh] pb-[5vh] lg:pb-[10vh]">
             {capabilities.map((cap, index) => (
               <motion.div
                 key={cap.title}
@@ -87,8 +87,11 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ margin: "-10%" }}
                 transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1], delay: 0.1 }}
-                className="sticky top-40 bg-[#0C2D57] overflow-hidden border border-[#1D4ED8]/20 group cursor-pointer"
-                style={{ zIndex: index, height: '500px' }}
+                style={{ 
+                  zIndex: index, 
+                  height: typeof window !== 'undefined' && window.innerWidth < 768 ? '400px' : '500px' 
+                }}
+                className="sticky top-24 md:top-40 bg-[#0C2D57] overflow-hidden border border-[#1D4ED8]/20 group cursor-pointer"
               >
                 <div className="block w-full h-full relative">
                   <div
@@ -97,12 +100,12 @@ export default function ServicesSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0C2D57] via-[#0C2D57]/40 to-transparent transition-opacity duration-700 opacity-90 group-hover:opacity-60" />
 
-                  <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end z-10">
+                  <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
                     <div className="transform translate-y-0 lg:translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                       <span className="text-brand-primary text-[12px] font-bold uppercase tracking-[0.2em] mb-4 block lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                         // 0{index + 1}
                       </span>
-                      <h3 className="text-[28px] md:text-[48px] font-bold leading-[1.05] tracking-tight text-white mb-4">
+                      <h3 className="text-[24px] md:text-[48px] font-bold leading-[1.05] tracking-tight text-white mb-4">
                         {cap.title}
                       </h3>
                       <p className="text-[14px] md:text-[18px] font-light text-white/90 lg:text-white/70 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 max-w-xl leading-[1.6]">

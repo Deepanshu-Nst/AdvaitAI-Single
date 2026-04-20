@@ -62,7 +62,7 @@ export default function UseCasesSection() {
   }, [isHovered]);
 
   return (
-    <section id="use-cases" className="relative bg-[#E8F4FD] text-[#0C2D57] py-32 border-t border-[#DBEAFE] overflow-hidden">
+    <section id="use-cases" className="relative bg-[#E8F4FD] text-[#0C2D57] py-20 md:py-32 border-t border-[#DBEAFE] overflow-hidden">
       {/* Background Image on Section */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-5"
@@ -71,7 +71,7 @@ export default function UseCasesSection() {
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#E8F4FD] via-[#E8F4FD]/80 to-[#E8F4FD]" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-20 relative">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 md:gap-16 mb-12 md:mb-20 relative">
 
           <ParticleNetwork idClassName="use-cases-particles" opacity={0.3} />
 
@@ -82,13 +82,13 @@ export default function UseCasesSection() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-2/3 pointer-events-none relative z-10"
           >
-            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-8 inline-block border-b border-brand-primary/30 pb-2">
+            <div className="text-brand-primary text-[12px] font-bold tracking-[0.2em] uppercase mb-6 md:mb-8 inline-block border-b border-brand-primary/30 pb-2">
               INDUSTRY SOLUTIONS
             </div>
-            <h2 className="text-[48px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-8">
+            <h2 className="text-[36px] md:text-[64px] font-bold leading-[1.05] tracking-tight mb-6 md:mb-8">
               Case Studies
             </h2>
-            <p className="text-[18px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6]">
+            <p className="text-[17px] md:text-[20px] font-light text-[#5B7FA5] leading-[1.6]">
               Transforming workflows with deterministic AI automation solutions tailored for complex, multi-layered industries.
             </p>
           </motion.div>
@@ -103,8 +103,8 @@ export default function UseCasesSection() {
         onTouchEnd={() => setIsHovered(false)}
       >
 
-        {/* Floating Navigation Arrows */}
-        <div className={`absolute left-6 top-1/2 -translate-y-1/2 z-30 transition-opacity duration-300 pointer-events-none flex w-[calc(100%-3rem)] justify-between ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+        {/* Floating Navigation Arrows - Hidden on small mobile */}
+        <div className={`absolute left-6 top-1/2 -translate-y-1/2 z-30 transition-opacity duration-300 pointer-events-none hidden sm:flex w-[calc(100%-3rem)] justify-between ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <button
             onClick={() => {
               if (containerRef.current) {
@@ -130,12 +130,12 @@ export default function UseCasesSection() {
 
         <div
           ref={containerRef}
-          className="flex gap-6 px-3 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing w-full"
+          className="flex gap-4 md:gap-6 px-6 md:px-3 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing w-full"
         >
           {duplicatedItems.map((useCase, index) => (
             <div
               key={`${useCase.title}-${index}`}
-              className="relative group overflow-hidden w-[350px] md:w-[450px] h-[500px] shrink-0 border border-[#BFDBFE] bg-white rounded-lg shadow-md shadow-blue-100"
+              className="relative group overflow-hidden w-[280px] sm:w-[350px] md:w-[450px] h-[400px] md:h-[500px] shrink-0 border border-[#BFDBFE] bg-white rounded-lg shadow-md shadow-blue-100"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110 opacity-60"

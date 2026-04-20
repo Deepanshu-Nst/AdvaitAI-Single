@@ -9,8 +9,8 @@ export default function Footer() {
     <footer className="bg-[#0C2D57] text-white pt-24 pb-12 font-light relative overflow-hidden">
       <ParticleNetwork idClassName="footer-particles" opacity={0.3} />
       <div className="container mx-auto px-6 md:px-12 relative z-10 pointer-events-none">
-        <div className="flex flex-col lg:flex-row justify-between gap-16 mb-24 border-b border-white/15 pb-20 pointer-events-auto">
-          <div className="w-full lg:w-1/2">
+        <div className="flex flex-col lg:flex-row justify-between gap-16 mb-24 border-b border-white/15 pb-20 pointer-events-auto items-center lg:items-start text-center lg:text-left">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
             <h3 className="text-[28px] md:text-[36px] font-light leading-[1.1] mb-6">Subscribe to our newsletter</h3>
             <p className="text-white/60 text-[16px] max-w-md mb-8">
               Gain a competitive edge with the latest in enterprise AI automation and deployments.
@@ -73,12 +73,12 @@ export default function Footer() {
             </form>
           </div>
 
-          <div className="w-full lg:w-[40%] flex flex-col items-start lg:items-end text-left lg:text-right">
-            <Link href="/" className="mb-8 block transform origin-left lg:origin-right hover:scale-105 transition-transform duration-300">
+          <div className="w-full lg:w-[40%] flex flex-col items-center lg:items-end text-center lg:text-right">
+            <Link href="/" className="mb-8 block transform origin-center lg:origin-right hover:scale-105 transition-transform duration-300">
               <img
                 src="https://i.ibb.co/LXRNGDVK/Advait-AI-logo-trans-removebg-preview.png"
                 alt="AdvaitAI Logo"
-                className="h-[72px] md:h-[90px] w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]"
+                className="h-[64px] md:h-[90px] w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]"
               />
             </Link>
             <p className="text-white/60 text-[15px] max-w-xs mb-8">
@@ -92,8 +92,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 border-t border-white/15 pt-8 pointer-events-auto">
-          <div className="text-[14px] text-white/60 flex flex-col md:flex-row gap-4 md:gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 border-t border-white/15 pt-8 pointer-events-auto text-center lg:text-left">
+          <div className="text-[14px] text-white/60 flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
             <button 
@@ -104,6 +104,7 @@ export default function Footer() {
             </button>
             <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
           </div>
+
           <div className="text-[14px] text-white/60">
             © {new Date().getFullYear()} ADVAITIANS INNOVATIONS PRIVATE LIMITED. All rights reserved.
           </div>
