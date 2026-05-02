@@ -71,9 +71,18 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
+
+            {/* DPIIT Recognition Badge */}
+            <div className="mt-16 md:mt-24 transform transition-transform hover:-translate-y-1 duration-300">
+              <img
+                src="/dpiit.png"
+                alt="Recognized by DPIIT - Startup India"
+                className="h-[160px] md:h-[180px] w-auto object-contain"
+              />
+            </div>
           </div>
 
-          <div className="w-full lg:w-[40%] flex flex-col items-center lg:items-end text-center lg:text-right">
+          <div className="w-full lg:w-[40%] flex flex-col items-center lg:items-end text-center lg:text-right h-full">
             <Link href="/" className="mb-8 block transform origin-center lg:origin-right hover:scale-105 transition-transform duration-300">
               <img
                 src="https://i.ibb.co/LXRNGDVK/Advait-AI-logo-trans-removebg-preview.png"
@@ -96,7 +105,7 @@ export default function Footer() {
           <div className="text-[14px] text-white/60 flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
-            <button 
+            <button
               onClick={() => window.dispatchEvent(new Event("openCookieSettings"))}
               className="hover:text-white transition-colors text-left"
             >
