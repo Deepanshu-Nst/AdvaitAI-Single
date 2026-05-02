@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { name: "Capabilities", href: "/#what-we-do" },
-  { name: "Case Studies", href: "/#use-cases" },
+  { name: "Capabilities", href: "/#capabilities" },
+  { name: "Case Studies", href: "/#case-studies" },
   { name: "Products", href: "/products" },
   { name: "Insights", href: "/#insights" },
 ];

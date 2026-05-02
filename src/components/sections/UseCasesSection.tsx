@@ -62,7 +62,7 @@ export default function UseCasesSection() {
   }, [isHovered]);
 
   return (
-    <section id="use-cases" className="relative bg-[#E8F4FD] text-[#0C2D57] py-20 md:py-32 border-t border-[#DBEAFE] overflow-hidden">
+    <section id="case-studies" className="relative bg-[#E8F4FD] text-[#0C2D57] py-20 md:py-32 border-t border-[#DBEAFE] overflow-hidden">
       {/* Background Image on Section */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-5"

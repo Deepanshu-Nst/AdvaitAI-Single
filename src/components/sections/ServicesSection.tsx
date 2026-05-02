@@ -43,7 +43,7 @@ export default function ServicesSection() {
   const containerRef = useRef(null);
 
   return (
-    <section id="what-we-do" className="bg-white text-[#0C2D57] w-full border-t border-[#DBEAFE] relative" ref={containerRef}>
+    <section id="capabilities" className="bg-white text-[#0C2D57] w-full border-t border-[#DBEAFE] relative" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12 py-16 md:py-32">
 
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 relative">
