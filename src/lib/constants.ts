@@ -8,7 +8,8 @@ export const siteConfig = {
   keywords: [
     'Artificial Intelligence', 'Aligned Intelligence', 'AI Workflows', 
     'Structured Reasoning', 'Automated Reports', 'Riddle Generation', 
-    'Enterprise AI', 'Flexible Deployment Architecture'
+    'Enterprise AI', 'Flexible Deployment Architecture',
+    'AI education', 'educational NLP', 'reasoning engine'
   ],
   links: {
     twitter: 'https://twitter.com/advaitai',
