@@ -63,13 +63,13 @@ export default function Navbar() {
           {/* Right actions & Mobile Toggle */}
           <div className="flex items-center justify-end gap-6 relative z-50 shrink-0">
             <Link
-              href="/#contact"
+              href="/products#calendly"
               className={cn(
                 "transition-all px-6 py-2.5 text-[13px] font-bold uppercase tracking-wider hidden md:inline-flex shadow-md shadow-brand-primary/20",
                 "bg-brand-primary text-white hover:bg-brand-secondary hover:text-white"
               )}
             >
-              Consult With Us
+              Book a Call
             </Link>
 
             <button
@@ -108,11 +108,11 @@ export default function Navbar() {
               ))}
               <div className="pt-4 mt-2 border-t border-[#DBEAFE]">
                 <Link
-                  href="/#contact"
+                  href="/products#calendly"
                   onClick={() => setMobileMenuOpen(false)}
                   className="inline-block bg-brand-primary text-white px-6 py-3 text-[14px] font-bold uppercase tracking-widest hover:bg-brand-secondary transition-colors"
                 >
-                  Consult With Us
+                  Book a Call
                 </Link>
               </div>
             </div>
